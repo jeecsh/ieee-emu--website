@@ -1,0 +1,44 @@
+/* src/styles.module.css */
+
+.logo{
+position: fixed;
+left: 0;
+margin-top: 9px;
+
+
+}
+
+.jj{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    right: 100px;
+    width: 300px;
+    align-items: center;
+}
+
+.customNavbar {
+    display: flex;
+    justify-content: space-between;
+ height: 70px;
+  background-color: #000000; /* Custom dark background */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar stays above other content */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.customNavbarBrand {
+  color: #ffffff ; 
+/* Custom color for brand */
+}
+
+.customNavLink {
+  color:#ffffff; /* Custom color for links */
+}
+
+.customNavLink:hover {
+  color: #ffffff ; /* Hover color */
+}

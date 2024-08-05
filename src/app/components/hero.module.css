@@ -1,0 +1,149 @@
+/* Container for the hero section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0; /* Start hidden */
+  transform: translateY(30px); /* Start off-screen */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  z-index: 1;
+}
+
+.heroSection.visible {
+  opacity: 1; /* Make it visible */
+  transform: translateY(0); /* Slide into view */
+}
+
+/* Overlay for the animated numbers */
+.animatedNumbers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.log{
+  position: absolute;
+  top: 6%;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 8px rgb(255, 255, 255); /* Adjust the shadow properties as needed */
+
+}
+/* Styles for the hero content */
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2; /* Ensure content is above the background */
+  height: 100%; /* Full height to center content */
+  padding: 20px;
+  margin-bottom: 5px; /* Add padding for better spacing */
+}
+.text{
+margin-top: 200px;
+}
+
+.heroContent h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+.heroContent p {
+  font-size: 1.25em;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #ffcc00;
+  color: #00274d;
+  padding: 15px 25px;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 1.1em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  animation: fadeIn 1s ease-out 1.5s forwards;
+}
+
+.ctaButton:hover {
+  background: #e0b900;
+}
+
+.ctaButtonSecondary {
+  background: transparent;
+
+  color: #ffcc00;
+}
+
+.ctaButtonSecondary:hover {
+  background: #ffcc00;
+  color: #00274d;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .heroContent h1 {
+    font-size: 2.5em;
+  }
+
+  .heroContent p {
+    font-size: 1.1em;
+  }
+
+  .ctaButton {
+    font-size: 1em;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2em;
+  }
+
+  .heroContent p {
+    font-size: 1em;
+  }
+
+  .ctaButton {
+    font-size: 0.9em;
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent h1 {
+    font-size: 1.5em;
+  }
+
+  .heroContent p {
+    font-size: 0.9em;
+  }
+
+  .ctaButton {
+    font-size: 0.8em;
+    padding: 8px 15px;
+  }
+}

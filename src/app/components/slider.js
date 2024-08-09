@@ -7,7 +7,7 @@ import { useTexture } from '@react-three/drei';
 const Gallery = lazy(() => import('react-gallery-3d').then(module => ({ default: module.Gallery })));
 const GalleryScene = lazy(() => import('react-gallery-3d').then(module => ({ default: module.GalleryScene })));
 const ImageItem = lazy(() => import('react-gallery-3d').then(module => ({ default: module.ImageItem })));
-
+``
 const galleryImages = [
   "/hd.svg",
   "/hd.svg",
@@ -64,7 +64,7 @@ export default function TextAnimation() {
               color: "black",
             }}
             camera={{
-              position: [55, 100, 150],
+              position: [55, 0, 150],
               fov: 50,
             }}
             ground={{

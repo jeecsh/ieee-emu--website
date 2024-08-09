@@ -58,7 +58,7 @@
 
 .textWrapper {
   position: absolute;
-  top: 20%; /* Center text vertically */
+  top: 10%; /* Center text vertically */
   left: 35%; /* Center text horizontally */
   transform: translate(-50%, -50%); /* Adjust for exact centering */
   text-align: center;
@@ -70,13 +70,14 @@
 }
 
 .text {
-  position: absolute;
+ 
 
   font-size: 2rem; /* Base font size */
   opacity: 0;
   transition: opacity 1s ease-in-out; /* Smooth transition */
   display: inline-block; 
-  white-space: nowrap;/* Keep text in a single line */
+  white-space: nowrap;
+  margin-right: 30px;/* Keep text in a single line */
 }
 
 /* Ensure transitions work for text */

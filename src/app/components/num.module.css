@@ -1,7 +1,7 @@
 .number {
     position: absolute;
     font-size: 3rem; /* Adjust size as needed */
-    color: #2c64b3; /* Light color with opacity */
+    color: #2c64b38c; /* Light color with opacity */
     user-select: none;
     transition: transform 0.3s ease; /* Smooth transition */
     animation: fall linear infinite;

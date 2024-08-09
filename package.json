@@ -23,7 +23,9 @@
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18",
     "react-gallery-3d": "^2.2.1",
+    "react-slick": "^0.30.2",
     "seedrandom": "^3.0.5",
+    "slick-carousel": "^1.8.1",
     "three": "^0.167.1"
   }
 }

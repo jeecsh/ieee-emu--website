@@ -4,6 +4,7 @@ import ResponsiveAppBar from "./components/navbar";
 import AboutUs from "./components/about";
 import AnimatedNumbers from "./components/aninumb";
 import InfoSection from "./components/info";
+import Cros from "./components/cros"
 // import TextAnimation from "./components/slider";
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
 <AnimatedNumbers />
 <HeroSection/>
 <AboutUs />
+<Cros/>
 {/* <TextAnimation /> */}
 <InfoSection />
 

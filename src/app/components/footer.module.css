@@ -1,0 +1,21 @@
+/* components/Footer.module.css */
+.cont{
+    height: 100px;
+    display: flex;
+    justify-content: center; /* Center align footer within wrapper */
+    margin-top: auto;
+}
+/* Footer styling */
+.footer {
+    background-color: #000000; /* Dark background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Center align text */
+    padding: 20px; /* Padding around the text */
+   /* Fix the footer to the bottom of the page */
+margin-top: auto;
+    width: 100%;
+    margin-top: 50px; /* Full width */
+  }
+  
+  
+  

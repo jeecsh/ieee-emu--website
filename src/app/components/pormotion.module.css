@@ -1,0 +1,51 @@
+/* components/Promotion.module.css */
+
+.promotion {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    height:300px;
+  }
+  
+  .qnaContainer {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .question {
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-height: 2em; /* Ensure space for the question text */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ffffff; /* Cursor effect */
+    animation: blink-caret 0.75s step-end infinite;
+    color:white;
+  }
+  
+  .answer {
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    color: #ffffff;
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #333;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

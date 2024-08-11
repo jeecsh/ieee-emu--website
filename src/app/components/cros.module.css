@@ -1,0 +1,59 @@
+/* cros.module.css */
+
+/* Container for the slider */
+.container {
+    position: relative; /* Position relative to place custom arrows */
+    width: 100%; /* Full width of the parent */
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto;
+     /* Center align if needed */
+  }
+  
+  /* Slider itself */
+  .slider {
+    width: 100%;
+  }
+  
+  /* Slide container */
+  .slide {
+    border: #ffffff;
+    border-radius: 10%;
+    border: 10px;
+    padding: 10px; /* Adjust padding as needed */
+  }
+  
+  /* Image inside slide */
+  .image {
+    width: 100%; /* Full width of the slide */
+    height: auto; 
+    border: 1px solid #ffffffa9; /* Add border with a dark color */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);/* Maintain aspect ratio */
+  }
+  
+  /* Custom arrow styling */
+  .arrow {
+    position: absolute; /* Position absolutely within the container */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent background */
+    color: white; /* Arrow color */
+    font-size: 24px; /* Adjust arrow size as needed */
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10; /* Ensure arrows are on top of the slider */
+  }
+  
+  /* Prev arrow */
+  .prevArrow {
+    left: 0px; /* Adjust position from the left */
+  }
+  
+  /* Next arrow */
+  .nextArrow {
+    right: 0px; /* Adjust position from the right */
+  }
+  .text{
+    color: #ffffff;
+  }

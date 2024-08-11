@@ -1,0 +1,166 @@
+/* components/more.module.css */
+
+.animatedSection {
+  position: relative;
+  padding: 40px 20px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #000000; /* Background color */
+  height: 500px; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background {
+  position: absolute;
+  top: 3%;
+  right: -115%; /* Start off-screen to the right */
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 2s ease;
+}
+
+.scrolling {
+  transform: translateX(-50%); /* Move to the center when scrolled */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px; /* Padding to prevent overlap */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background to ensure readability */
+  border-radius: 10px;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #0056b3;
+  opacity: 0;
+  transition: opacity 1s ease-in; /* Ensure heading text is visible */
+}
+
+.paragraph {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: aliceblue;
+  opacity: 0;
+    transition: opacity 2s ease-in;
+}
+.fadeIn {
+  opacity: 1;
+}
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid transparent; /* Border color for initial state */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  z-index: 0; /* Smooth scaling effect */
+  display: flex; /* Enable flexbox */
+  align-items: center; /* Center text vertically */
+  justify-content: flex-end; /* Center text horizontally */
+  text-align: center;
+  margin-left: 600px;
+  color: #0056b3;
+}
+
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #0056b3; /* Background color on hover */
+  transition: left 0.3s ease; /* Animation for sliding effect */
+  z-index: 0; /* Ensure the background stays behind the text */
+ 
+}
+
+
+.button:hover::before {
+  left: 0;
+}
+
+.button:hover {
+  color: white;
+  transform: scale(1.05);
+  border-radius: 10px;
+  
+}
+
+.button p {
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+   /* Ensure text is on top of the animated background */
+}
+
+
+
+@media (max-width: 768px) {
+  .animatedSection {
+    height: auto; /* Adjust height for smaller screens */
+    padding: 20px 10px;
+  }
+
+  .background {
+    right: -50%; /* Adjust for smaller screens */
+    width: 150%; /* Adjust width for smaller screens */
+  }
+
+  .scrolling {
+    transform: translateX(7%); /* Adjust translation for smaller screens */
+  }
+
+  .content {
+    max-width: 100%; /* Full width for content */
+    padding: 10px; /* Adjust padding */
+  }
+
+.button{
+    margin-left: 200px
+}
+
+  .heading {
+    font-size: 1.5rem; /* Smaller heading text */
+  }
+
+  .paragraph {
+    font-size: 0.875rem; /* Smaller paragraph text */
+  }
+}
+
+@media (max-width: 480px) {
+  .background {
+    right: -30%; /* Further adjust for very small screens */
+    width: 200%; /* Ensure full background visibility */
+  }
+
+  .scrolling {
+    transform: translateX(50%); /* Further adjust translation */
+  }
+
+  .heading {
+    font-size: 1.25rem; /* Further decrease heading text size */
+  }
+
+  .paragraph {
+    font-size: 0.75rem; /* Further decrease paragraph text size */
+  }
+}

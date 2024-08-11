@@ -31,14 +31,17 @@ const NextArrow = ({ className, onClick }) => (
 
 export default function SimpleSlider() {
   const [settings, setSettings] = useState({
-    dots: true,
+    dots: true, 
     infinite: true,
+    focusOnSelect: true,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 1,      
     autoplay: true,
     speed: 2000,
+
+    pauseOnHover: true, 
     autoplaySpeed: 2000,
-    cssEase: "linear",
+ 
    initialSlide: 0,
     responsive: [
       {
@@ -71,7 +74,7 @@ export default function SimpleSlider() {
  
   return (
     <div className={styles.container}>
-      <h2>Events</h2>
+      <h2 className={styles.text}>Events</h2>
       <Slider {...settings} className={styles.slider}>
         {images.map((image, index) => (
           <div key={index} className={styles.slide}>

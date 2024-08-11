@@ -1,45 +1,50 @@
-/* components/InfoSection.module.css */
-
 /* Container for the info section */
 .infoSection {
-    padding: 40px 20px;
-    background-color: #f9f9f9; /* Light background color */
-    text-align: center;
-  }
-  
-  /* Grid layout for the items */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 40px 20px;
+  background-color: #000000; /* Background color */
+  color: white;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+}
+.infoItem h3{
+color: #0056b3;
+}
+
+/* Grid layout for the items */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Space between items */
+}
+
+/* Style for each info item */
+.infoItem {
+  background-color: #000000; /* Dark background for items */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(51, 96, 180, 0.8); /* Glowing effect */
+  padding: 20px;
+  transition: transform 0.3s ease, width 0.3s ease; /* Smooth transition for hover effect */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Expand effect on hover */
+.infoItem:hover {
+  transform: scale(1.05); /* Slightly enlarge the item */
+  width: 100%; /* Ensure item spans the full width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .infoGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 20px; /* Space between squares */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
   }
-  
-  /* Style for each info item */
-  .infoItem {
-    background-color: #fff; /* White background for items */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px;
-    transition: transform 0.3s ease, width 0.3s ease; /* Smooth transition for hover effect */
-    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+@media (max-width: 480px) {
+  .infoGrid {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
   }
-  
-  /* Expand effect on hover */
-  .infoItem:hover {
-    transform: scale(1.05); /* Slightly enlarge the item */
-    width: 100%; /* Make sure item spans the full width */
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .infoGrid {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .infoGrid {
-      grid-template-columns: 1fr; /* 1 column on very small screens */
-    }
-  }
-  
+}

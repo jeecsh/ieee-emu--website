@@ -9,18 +9,30 @@
     max-width: 1200px; /* Adjust max-width as needed */
     margin: 0 auto;
     margin-top: 140px; 
-    background-color: #3060b3;
-    border: 2px solid white;
-    border-radius: 20px;/* Center align container */
+    background-color: #000000;
+    border: 0px solid white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+    transition: box-shadow 0.3s ease-in-out; 
+    /* Center align container */
   }
+.contactContainer:hover {
+    box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* More intense glow on hover */
+}
   
   /* Styling for contact information */
   .contactInfo {
+    margin-top: 40px;
     color: #ffffff;
     flex: 2; /* Takes up 2 parts of the flex container */
-    margin-right: 20px; /* Space between text and map */
+    margin-right: 20px;
+    font-display: flex;
+    align-items: center;
+    justify-content: center; /* Space between text and map */
   }
-  
+.hdd{ 
+    color: #0056b3;
+  }
   /* Styling for map container */
   .mapContainer {
     margin-top: 40px;
@@ -37,7 +49,7 @@
     height: 100%;
   }
   .email {
-    color: rgb(0, 0, 0); /* Change text color to gray */
+    color: 3060b3; /* Change text color to gray */
     text-decoration: none; /* Remove underline from link */
   }
   

@@ -1,0 +1,192 @@
+/* styles/Subscribe.module.css */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.leftSection {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 70px;
+}
+
+.rightSection {
+    width: 50%;
+    height: auto; /* Adjust height to fit content */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #2f61b3; /* Border color matching the glow */
+    border-radius: 20px;
+    background-color: #000000;
+    padding: 20px; /* Added padding for better spacing */
+    box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.rightSection:hover {
+    box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* More intense glow on hover */
+}
+
+.heading {
+    font-size: 28px; /* Slightly larger font size */
+    margin-bottom: 15px;
+    color: #0056b3; /* Changed color to match the theme */
+}
+
+.description {
+    font-size: 18px; /* Increased font size for better readability */
+    margin-bottom: 15px;
+    color: #c5c5c5; /* Darker color for better contrast */
+}
+
+.socialMediaSection {
+    display: flex;
+    gap: 15px; /* Increased gap for better spacing */
+}
+
+.icon {
+    color: #0056b3;
+    font-size: 20px; /* Slightly larger icons */
+}
+
+.icon:hover {
+    color: #2f61b3;
+}
+
+.formHeading {
+    font-size: 28px; /* Consistent heading size */
+    margin-bottom: 15px;
+    color: #0056b3;
+    font-weight: bolder;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.label {
+    font-size: 18px; /* Larger font size */
+    margin-bottom: 8px;
+    color: #3060b3; /* Match the color of the description text */
+}
+
+.input {
+    padding: 12px; /* Increased padding for better input field */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px; /* Slightly larger border radius */
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.button {
+    padding: 12px 25px; /* Increased padding for better button appearance */
+    font-size: 16px;
+    border: none;
+    border-radius: 6px; /* Match border radius with input */
+    background-color: #2f61b3;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.button:hover {
+    background-color: #324db3;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #0056b3;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Mobile phones (portrait and landscape) */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically on small screens */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .leftSection {
+        margin-right: 0; /* Remove margin on small screens */
+        margin-top: 20px; /* Reduced top margin */
+    }
+
+    .rightSection {
+        width: 100%; /* Make right section full width */
+        margin-top: 20px; /* Add margin on top */
+    }
+
+    .heading, .formHeading {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .description, .label {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Tablets and small desktop screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically on tablets */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .leftSection {
+        margin-right: 0; /* Remove margin on tablets */
+        margin-top: 20px; /* Reduced top margin */
+    }
+
+    .rightSection {
+        width: 100%; /* Make right section full width */
+        margin-top: 20px; /* Add margin on top */
+    }
+
+    .heading, .formHeading {
+        font-size: 26px; /* Adjust font size for tablets */
+    }
+
+    .description, .label {
+        font-size: 17px; /* Adjust font size for tablets */
+    }
+}
+
+/* Desktops and larger screens */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row; /* Horizontal layout for larger screens */
+        padding: 20px; /* Standard padding */
+    }
+
+    .leftSection {
+        margin-right: 20px; /* Restore margin for larger screens */
+    }
+
+    .rightSection {
+        width: 50%; /* Restore width for larger screens */
+    }
+
+    .heading, .formHeading {
+        font-size: 28px; /* Maintain larger font size */
+    }
+
+    .description, .label {
+        font-size: 18px; /* Maintain font size */
+    }
+}

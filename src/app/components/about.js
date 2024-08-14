@@ -1,6 +1,6 @@
 // components/AboutUs.js
 "use client"
-
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './aboutUs.module.css'; // Ensure this CSS module exists
 
@@ -40,10 +40,8 @@ export default function AboutUs() {
         <h2>About IEEE</h2>
         <p>
           The IEEE (Institute of Electrical and Electronics Engineers) is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE's core purpose is to foster technological innovation and excellence for the benefit of humanity.
-        </p>
-        <a href="https://www.ieee.org" className={styles.ctaButton}>
-          Visit ieee.org
-        </a>
+          </p>
+          <button className={styles.ctaButton}><p>see ieee.org< KeyboardDoubleArrowRightIcon/> </p></button>
       </div>
     </section>
   );

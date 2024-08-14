@@ -6,7 +6,7 @@ export default function ContactUs() {
   return (
     <div className={styles.contactContainer}>
       <div className={styles.contactInfo}>
-        <h2>Contact Us</h2>
+        <h2 className={styles.hdd} >Contact Us</h2>
         <p>If you have any inquiries regarding our club, or would like to reach out to us about our events, please send us an email!</p>
         <p><strong>Email Us:</strong> <a href="mailto:general@ieee.utoronto.ca" className={styles.email}>general@ieee.utoronto.ca</a></p>
         <p><strong>Address:</strong></p>

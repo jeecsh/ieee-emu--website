@@ -10,6 +10,7 @@ import Footer from "./components/footer.js"
 import Promotion from "./components/pormotion";
 import AnimatedSection from "./components/more";
 import MoreSection from "./components/morevi";
+import NewsletterSignup from "./components/newsletter"
 // import FAQSection from "./components/qustions";
 // import TextAnimation from "./components/slider";
 export default function Home() {
@@ -26,7 +27,9 @@ export default function Home() {
 {/* <FAQSection/> */}
 {/* <TextAnimation /> */}
 <InfoSection />
+
 <Cros/>
+<NewsletterSignup />
 <ContactUs />
 <Footer />
 

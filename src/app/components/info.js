@@ -12,7 +12,7 @@ export default function InfoSection() {
         </div>
         <div className={styles.infoItem}>
           <h3>Newsletter</h3>
-          <p>Sign up for our monthly newsletter. Receive information about IEEE UofT events, updates, and other useful stuff right in your inbox!</p>
+          <p>Sign up for our monthly newsletter. Receive information about IEEE EMU events, updates, and other useful stuff right in your inbox!</p>
         </div>
         <div className={styles.infoItem}>
           <h3>IEEE Membership</h3>

@@ -50,7 +50,7 @@ export default function Hero() {
         />
          </div>
          <div className={styles.text}>
-        <h1>Welcome to the IEEE EMU Student Branch</h1>
+        <h1 className={styles.hed}>Welcome to the IEEE EMU Student Branch</h1>
         <p>Empowering Innovation, Networking, and Leadership in Engineering and Technology</p>
         <a href="#events" className={styles.ctaButton}>Join Us Now</a>
         <a href="#about" className={styles.ctaButtonSecondary}>Learn More</a>

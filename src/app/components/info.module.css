@@ -3,11 +3,12 @@
   display: flex; /* Use flexbox for centering */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
-  padding: 40px 20px;
+
   background-color: #000000; /* Background color */
   color: white;
   height: 100vh; /* Full viewport height */
   text-align: center;
+  width: 100%;
 }
 .infoItem h3{
 color: #0056b3;
@@ -22,18 +23,21 @@ color: #0056b3;
 
 /* Style for each info item */
 .infoItem {
+  width: 400px;
   background-color: #000000; /* Dark background for items */
   border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 15px rgba(51, 96, 180, 0.8); /* Glowing effect */
+  box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+  transition: box-shadow 0.3s ease-in-out;  /* Glowing effect */
   padding: 20px;
-  transition: transform 0.3s ease, width 0.3s ease; /* Smooth transition for hover effect */
+/* Smooth transition for hover effect */
   overflow: hidden; /* Ensure content doesn't overflow */
 }
 
-/* Expand effect on hover */
+
 .infoItem:hover {
-  transform: scale(1.05); /* Slightly enlarge the item */
-  width: 100%; /* Ensure item spans the full width */
+ /* Slightly enlarge the item */
+
+  box-shadow: 0 0 30px rgba(0, 112, 243, 0.8);  /* Ensure item spans the full width */
 }
 
 /* Responsive adjustments */

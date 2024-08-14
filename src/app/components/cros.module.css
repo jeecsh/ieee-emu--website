@@ -6,12 +6,23 @@
     width: 100%; /* Full width of the parent */
     max-width: 1200px; /* Adjust max-width as needed */
     margin: 0 auto;
-     /* Center align if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+
   }
   
   /* Slider itself */
   .slider {
     width: 100%;
+    border: 0px solid white;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Center align container */
+     /* Center align if needed */
+  
   }
   
   /* Slide container */
@@ -26,7 +37,7 @@
   .image {
     width: 100%; /* Full width of the slide */
     height: auto; 
-    border: 1px solid #ffffffa9; /* Add border with a dark color */
+    border: 1px solid #000000a9; /* Add border with a dark color */
     border-radius: 8px; /* Optional: Add rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);/* Maintain aspect ratio */
   }
@@ -55,5 +66,6 @@
     right: 0px; /* Adjust position from the right */
   }
   .text{
-    color: #ffffff;
+    color: #0056b3;
+    margin-bottom: 30px;
   }

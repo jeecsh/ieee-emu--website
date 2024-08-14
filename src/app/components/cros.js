@@ -6,12 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from './cros.module.css'; // Import your CSS module
 
 const images = [
-  "/hd.svg",
-  "/hd.svg",
-  "/hd.svg",
-  "/hd.svg",
-  "/hd.svg",
-  "/hd.svg",
+  "/hh.jpeg",
+   "/hh.jpeg",
+   "/hh.jpeg",
+   "/hh.jpeg",
+   "/hh.jpeg",
+   "/hh.jpeg",
 ];
 
 // Custom arrow components

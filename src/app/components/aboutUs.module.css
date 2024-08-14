@@ -71,7 +71,7 @@
     margin-top: 20px;
     padding: 10px 20px;
     background-color: transparent;
-    color: white;
+
     border: 2px solid transparent; /* Border color for initial state */
     border-radius: 5px;
     cursor: pointer;
@@ -90,7 +90,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     height: 50px;
-    width: auto;
+  width: auto;
   }
   
 
@@ -121,6 +121,13 @@
     position: relative;
     z-index: 2;
     margin-top: 10px;
+    color: #0056b3;
+     /* Ensure text is on top of the animated background */
+  } .ctaButton p:hover {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    color: #ffffff;
      /* Ensure text is on top of the animated background */
   }
   

@@ -32,10 +32,10 @@ export default function ColorSchemesExample() {
               <Nav.Link href="#home" className={styles.customNavLink}>Home</Nav.Link>
               <Nav.Link href="#features" className={styles.customNavLink}>AboutUs</Nav.Link>
               <Nav.Link href="#pricing" className={styles.customNavLink}>Events</Nav.Link>
-              <Nav.Link href="#pricing" className={styles.customNavLink}>ContactUS</Nav.Link>
+              <Nav.Link href="#pricing" className={styles.customNavLink}>ContactUS</Nav.Link>                                                                                                                                                                                                                                     
             </Nav>
           </Navbar.Collapse>
-        </Container>
+        </Container>                                                                                                              
       </Navbar>
     </>
   );

@@ -1,0 +1,86 @@
+/* Styling for individual event cards */
+.eventCard {
+    display: flex;
+    border: 0px solid #000000;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: black;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.eventCard:hover {
+    box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* More intense glow on hover */
+}
+  
+  
+  .dateSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 12px;
+    margin-right: 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .month, .day, .year {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .month {
+    color: #7d4eeb;
+  }
+  
+  .day {
+    font-size: 32px;
+  }
+  
+  .year {
+    font-size: 12px;
+  }
+  
+  .eventDetails {
+    flex-grow: 1;
+  }
+  
+  .featured {
+    color: #7d4eeb;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .title {
+    font-size: 20px;
+    margin: 4px 0;
+    color: #ffffff;
+  }
+  
+  .location {
+    color: #0070f3;
+    font-style: italic;
+  }
+  
+  .description {
+    margin: 8px 0;
+    color: white;
+  }
+  
+  .registrationLink {
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .registrationLink:hover {
+    text-decoration: underline;
+  }
+  
+  .bio {
+    font-size: 14px;
+    color: #fff6f6;
+  }
+  

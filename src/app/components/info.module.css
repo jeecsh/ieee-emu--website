@@ -3,41 +3,34 @@
   display: flex; /* Use flexbox for centering */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
-
   background-color: #000000; /* Background color */
   color: white;
-  height: 100vh; /* Full viewport height */
+  padding: 20px; /* Add padding for spacing */
   text-align: center;
   width: 100%;
 }
-.infoItem h3{
-color: #0056b3;
+
+/* Style for each info item */
+.infoItem {
+  background-color: #000000; /* Dark background for items */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+  padding: 20px; /* Adjust padding for smaller screens */
+  margin: 10px; /* Add margin to prevent overlapping */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Hover effect */
+.infoItem:hover {
+  box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* Enhanced shadow on hover */
 }
 
 /* Grid layout for the items */
 .infoGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 20px; /* Space between items */
-}
-
-/* Style for each info item */
-.infoItem {
-  width: 400px;
-  background-color: #000000; /* Dark background for items */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
-  transition: box-shadow 0.3s ease-in-out;  /* Glowing effect */
-  padding: 20px;
-/* Smooth transition for hover effect */
-  overflow: hidden; /* Ensure content doesn't overflow */
-}
-
-
-.infoItem:hover {
- /* Slightly enlarge the item */
-
-  box-shadow: 0 0 30px rgba(0, 112, 243, 0.8);  /* Ensure item spans the full width */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Adjust gap for better spacing */
 }
 
 /* Responsive adjustments */
@@ -51,4 +44,8 @@ color: #0056b3;
   .infoGrid {
     grid-template-columns: 1fr; /* 1 column on very small screens */
   }
+}
+
+.infoItem h3 {
+  color: #0056b3; /* Color for headers */
 }

@@ -1,76 +1,90 @@
 "use client";
-
-// components/Promotion.js
 import React, { useState, useEffect } from 'react';
+import Counter from './counter'; // Import the Counter component
 import styles from './pormotion.module.css'; // Import your CSS module
 
 const questionsAndAnswers = [
   {
-    question: "Why Join IEEE?",
-    answer: "Access to cutting-edge information, networking opportunities, career enhancement, and many other exclusive member benefits are the key values of IEEE membership.",
-  },
-  {
-    question: "Why Join EMU IEEE Student Branch?",
-    answer: "Student Branch events IEEE student members will receive priority and discounts to participate in the events organized by our branch. Further, we try to tailor our events based on members’ interest.",
+    question: "Why you should Join IEEE?",
+    answers: [
+      "Access to cutting-edge information, networking opportunities, career enhancement, and many other exclusive member benefits are the key values of IEEE membership.",
+      "Joining IEEE offers numerous networking opportunities with industry professionals and access to exclusive resources that can help advance your career .",
+      "Being a part of IEEE allows you to stay updated with the latest technological advancements, connect with like-minded individuals, and gain leadership opportunities."
+    ]
   }
 ];
-const additionalQuestionsAndAnswers = [
-    {
-      question: "Personal Development",
-      answer: "IEEE opens the door to opportunities that will help you develop your professional identity by improving communication and leadership skills and thinking from a new perspective. In addition, you will make global connections with people who can help you along your targeted career path. At Unic IEEE Student Branch, we are always looking for enthusiastic students to get involved and lead the Branch into the future. To be involved in any roles, you must be a member first.",
-    },
-    {
-      question: "Project Support",
-      answer: "If you ever had an exciting project in mind and have the capacity to follow through with it, creating it with IEEE can be very advantageous, as branding may help the professionalism of your project, help with receiving funding, and receive help to advertise and recruit team members.",
-    },
-  ];
 
 export default function Promotion() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayQuestion, setDisplayQuestion] = useState("");
+  const [currentAnswerIndex, setCurrentAnswerIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
 
   useEffect(() => {
-    const questionDuration = 3000; // Duration for typing question
-    const answerDuration = 2000; // Duration for fading in the answer
     const typingSpeed = 100; // Speed of typing effect
+    const question = questionsAndAnswers[0].question;
+    let index = 0;
+    let typeInterval;
+    let answerInterval;
 
     const typeQuestion = () => {
-      const question = questionsAndAnswers[currentIndex].question;
       let displayedText = '';
-      let index = 0;
-      
-      const typeInterval = setInterval(() => {
+      index = 0; // Reset index for each typing effect
+
+      typeInterval = setInterval(() => {
         if (index < question.length) {
           displayedText += question[index];
           index += 1;
-          document.getElementById('question').innerText = displayedText;
+          setDisplayQuestion(displayedText); // Update question display
         } else {
           clearInterval(typeInterval);
-          setTimeout(() => setShowAnswer(true), questionDuration);
+          setShowAnswer(true);
+
+          // Start cycling through answers
+          answerInterval = setInterval(() => {
+            setCurrentAnswerIndex((prevIndex) => (prevIndex + 1) % questionsAndAnswers[0].answers.length);
+          }, 3000); // Change answer every 8 seconds to match the CSS timing
         }
       }, typingSpeed);
     };
 
     typeQuestion();
-    const interval = setInterval(() => {
-      setShowAnswer(false);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % questionsAndAnswers.length);
-      typeQuestion();
-    }, questionDuration + answerDuration + 5000); // Adjust timing for next question
 
-    return () => clearInterval(interval); // Clean up interval on component unmount
-  }, [currentIndex]);
+    // Clear intervals on component unmount
+    return () => {
+      if (typeInterval) clearInterval(typeInterval);
+      if (answerInterval) clearInterval(answerInterval);
+    };
+  }, []);
 
   return (
     <section className={styles.promotion}>
-     
       <div className={styles.qnaContainer}>
-        <div id="question" className={styles.question}></div>
+        <div className={styles.question}>{displayQuestion}</div>
         {showAnswer && (
           <div className={styles.answer}>
-            {questionsAndAnswers[currentIndex].answer}
+            {questionsAndAnswers[0].answers[currentAnswerIndex]}
           </div>
         )}
+      </div>
+      <div className={styles.counterRow}>
+        <Counter
+          over="Over"
+          targetNumber={3500}
+          label="Student Branches"
+          duration={2000} // Adjust duration for smooth animation
+        />
+        <Counter
+          over="Over"
+          targetNumber={400000}
+          label="Students"
+          duration={2000} // Adjust duration for smooth animation
+        />
+        <Counter
+          over="Total Of"
+          targetNumber={160}
+          label="Countries"
+          duration={2000} // Adjust duration for smooth animation
+        />
       </div>
     </section>
   );

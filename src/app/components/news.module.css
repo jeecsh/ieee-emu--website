@@ -1,0 +1,170 @@
+.newsContainer {
+    padding: 20px;
+    background-color: #000000;
+    height: auto; /* Ensure the container height adjusts to content */
+    margin-top: 100px; /* Dark background for the IEEE theme */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Ensure padding is included in the width/height calculation */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure header spans full width */
+    max-width: 1200px; /* Restrict max width for large screens */
+    margin-bottom: 20px;
+    padding: 0 10px; /* Add padding to prevent overlap with edges */
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    color: #0056b3; /* White text color */
+    text-align: center; /* Center align heading text */
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow h2 to grow and take up available space */
+}
+
+.seeAll {
+    font-size: 1rem;
+    color: #ffffff; /* IEEE Blue */
+    text-decoration: none;
+}
+
+.newsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    width: 100%; /* Ensure grid spans full width */
+    max-width: 1200px; /* Restrict max width for large screens */
+    padding: 0 10px; /* Add padding to prevent overlap with edges */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.newsItem {
+    background: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.newsItem:hover {
+    transform: scale(1.02);
+}
+
+.newsImage {
+    width: 100%;
+    height: auto; /* Allow height to adjust based on aspect ratio */
+    max-height: 180px; /* Limit max height to avoid overflow */
+    object-fit: cover;
+}
+
+.newsContent {
+    padding: 15px;
+}
+
+.newsMeta {
+    font-size: 0.875rem;
+    color: #cccccc; /* Light grey for metadata */
+    margin-bottom: 10px;
+}
+
+.category {
+    font-weight: bold;
+}
+
+.newsTitle {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #0056b3; /* IEEE Blue */
+}
+
+.newsDescription {
+    font-size: 0.95rem;
+    color: #dddddd; /* Light grey for description */
+    margin-bottom: 10px;
+}
+
+.readTime {
+    font-size: 0.85rem;
+    color: #999999; /* Slightly darker grey for read time */
+}
+
+/* Media Queries for Responsive Design */
+
+/* Mobile Devices (Portrait and Landscape) */
+@media (max-width: 480px) {
+    .header h2 {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+
+    .newsGrid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 10px; /* Reduce gap */
+    }
+
+    .newsImage {
+        height: auto; /* Adjust image height for mobile */
+    }
+
+    .newsTitle {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+
+    .newsDescription {
+        font-size: 0.85rem; /* Adjust font size for mobile */
+    }
+}
+
+/* Tablets (Portrait and Landscape) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .newsItem{
+        width: 50%;
+    }
+    .header h2 {
+        font-size: 1.3rem; /* Adjust font size for tablets */
+    }
+
+    .newsGrid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    }
+
+    .newsImage {
+        height: auto; /* Adjust image height for tablets */
+    }
+
+    .newsTitle {
+        font-size: 1.1rem; /* Adjust font size for tablets */
+    }
+
+    .newsDescription {
+        font-size: 0.9rem; /* Adjust font size for tablets */
+    }
+}
+
+/* Desktops (Large screens) */
+@media (min-width: 769px) {
+
+    .header h2 {
+        font-size: 1.5rem; /* Default font size for larger screens */
+    }
+
+    .newsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+    }
+
+    .newsImage {
+        height: auto; /* Default image height for larger screens */
+    }
+
+    .newsTitle {
+        font-size: 1.25rem; /* Default font size for larger screens */
+    }
+
+    .newsDescription {
+        font-size: 0.95rem; /* Default font size for larger screens */
+    }
+}

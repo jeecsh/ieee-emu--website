@@ -1,0 +1,190 @@
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+  }
+  
+  /* Page heading */
+  .heading {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 40px;
+  }
+  
+  /* Event sections styling */
+  .eventsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* Subheading for sections */
+  .subheading {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #0070f3;
+    padding-bottom: 8px;
+  }
+  
+  /* Event section styling */
+  .eventsSection {
+    padding: 20px 0;
+    
+  }
+  
+  /* Style for event card (flex layout) */
+  
+  
+  /* Card hover effect */
+  .eventCard:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Date section styling */
+  .dateSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 12px;
+    margin-right: 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .month, .day, .year {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .month {
+    color: #0070f3;
+  }
+  
+  .day {
+    font-size: 32px;
+    color: #333;
+  }
+  
+  .year {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  /* Event details section */
+  .eventDetails {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Featured badge */
+  .featured {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .featured span {
+    margin-right: 8px;
+  }
+  
+  /* Event title */
+  .title {
+    font-size: 20px;
+    color: #fff7f7;
+    margin: 4px 0;
+    font-weight: bold;
+  }
+  
+  /* Event location */
+  .location {
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  
+  /* Event description */
+  .description {
+    margin: 8px 0;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  /* Registration link styling */
+  .registrationLink {
+    color: #0070f3;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .registrationLink:hover {
+    text-decoration: underline;
+  }
+  
+  /* Bio section (optional) */
+  .bio {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  /* For tablets */
+  @media (max-width: 768px) {
+    .eventCard {
+      flex-direction: column;
+      text-align: left;
+    }
+  
+    .dateSection {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 8px 12px;
+    }
+  
+    .day {
+      font-size: 24px;
+    }
+  
+    .eventDetails {
+      margin-top: 16px;
+    }
+  }
+  
+  /* For mobile phones */
+  @media (max-width: 576px) {
+    .heading {
+      font-size: 28px;
+    }
+  
+    .subheading {
+      font-size: 20px;
+    }
+  
+    .dateSection {
+      margin-right: 0;
+    }
+  
+    .eventCard {
+      padding: 12px;
+    }
+  
+    .day {
+      font-size: 20px;
+    }
+  
+    .description {
+      font-size: 14px;
+    }
+  }
+  

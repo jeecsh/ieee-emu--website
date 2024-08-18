@@ -8,10 +8,7 @@ import styles from './cros.module.css'; // Import your CSS module
 const images = [
   "/hh.jpeg",
    "/hh.jpeg",
-   "/hh.jpeg",
-   "/hh.jpeg",
-   "/hh.jpeg",
-   "/hh.jpeg",
+ 
 ];
 
 // Custom arrow components
@@ -34,7 +31,7 @@ export default function SimpleSlider() {
     dots: true, 
     infinite: true,
     focusOnSelect: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,      
     autoplay: true,
     speed: 2000,

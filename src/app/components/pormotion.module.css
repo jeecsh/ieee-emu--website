@@ -1,51 +1,215 @@
-/* components/Promotion.module.css */
-
 .promotion {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    height:300px;
-  }
-  
-  .qnaContainer {
-    position: relative;
-    margin-top: 20px;
-  }
-  
-  .question {
-    font-size: 1.5rem;
-    font-weight: bold;
-    min-height: 2em; /* Ensure space for the question text */
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid #ffffff; /* Cursor effect */
-    animation: blink-caret 0.75s step-end infinite;
-    color:white;
-  }
-  
-  .answer {
-    margin-top: 20px;
+  padding: 20px;
+  background-color: #000000;
+  height: auto;
+}
+
+.counterRow {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 20px;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+.qnaContainer {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.question {
+  font-size: 1.5rem;
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.answer {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeInOut 8s ease-in-out infinite; /* Match JS cycle */
+}
+
+/* Keyframes for fade-in and fade-out animation */
+@keyframes fadeInOut {
+  0% {
     opacity: 0;
-    animation: fadeIn 2s forwards;
-    color: #ffffff;
   }
-  
-  @keyframes blink-caret {
-    from, to {
-      border-color: transparent;
-    }
-    50% {
-      border-color: #333;
-    }
+  20% {
+    opacity: 1;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  70% {
+    opacity: 1;
   }
-  
+  100% {
+    opacity: 0;
+  }
+}
+
+.counterDiv {
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.counterNumberWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.counterNumber {
+  font-size: 3rem;
+  color: #333;
+}
+
+.counterLabel {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.counterDescription {
+  font-size: 1rem;
+  color: #888;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+.counterDiv:hover .counterDescription {
+  opacity: 1;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Large screens (Desktops and larger) */
+@media (min-width: 1200px) {
+  .qnaContainer {
+    margin-bottom: 50px;
+  }
+
+  .counterDiv {
+    margin: 20px;
+  }
+
+  .counterNumber {
+    font-size: 3.5rem;
+  }
+
+  .counterLabel {
+    font-size: 2rem;
+  }
+
+  .counterDescription {
+    font-size: 1.2rem;
+  }
+}
+
+/* Medium screens (Tablets) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .qnaContainer {
+    margin-bottom: 30px;
+  }
+
+  .counterRow {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .counterDiv {
+    width: 30%;
+  }
+
+  .counterNumber {
+    font-size: 2.5rem;
+  }
+
+  .counterLabel {
+    font-size: 1.4rem;
+  }
+
+  .counterDescription {
+    font-size: 1rem;
+  }
+}
+
+/* Small screens (Mobile) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .question {
+    font-size: 1.2rem;
+  }
+
+  .answer {
+    font-size: 0.9rem;
+  }
+
+  .counterRow {
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    padding: 10px;
+  }
+
+  .counterDiv {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .counterNumber {
+    font-size: 2rem;
+  }
+
+  .counterLabel {
+    font-size: 1.2rem;
+  }
+
+  .counterDescription {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens (Very small mobile) */
+@media (max-width: 479px) {
+  .question {
+    font-size: 1rem;
+  }
+
+  .answer {
+    font-size: 0.8rem;
+  }
+
+  .counterRow {
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+    padding: 5px;
+  }
+
+  .counterDiv {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .counterNumber {
+    font-size: 1.5rem;
+  }
+
+  .counterLabel {
+    font-size: 1rem;
+  }
+
+  .counterDescription {
+    font-size: 0.8rem;
+  }
+}

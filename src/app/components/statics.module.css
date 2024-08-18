@@ -1,0 +1,76 @@
+/* Container for the row */
+.counterRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0;
+    padding: 20px;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  }
+  
+  /* Individual counter box styling */
+  .counterDiv {
+    text-align: center;
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 15px;
+ 
+  width: 220px;
+    margin: 20px;
+    height:220px;
+    box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+.counterDiv:hover {
+    box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* More intense glow on hover */
+}
+  
+  
+  /* Counter number styling */
+  .counterNumber {
+    font-size: 48px;
+    font-weight: bold;
+    color: #0056b3;
+  }
+  
+  /* Counter label styling */
+  .counterLabel {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  /* Counter description styling */
+  .counterDescription {
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 10px;
+  }
+  
+  /* Hover effect for the counter boxes */
+  .counterDiv:hover {
+    transform: translateY(-10px);
+    background-color: #ffffff;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .counterDiv {
+      max-width: 200px;
+    }
+  
+    .counterNumber {
+      font-size: 36px;
+    }
+  
+    .counterLabel {
+      font-size: 18px;
+      
+    }
+  
+    .counterDescription {
+      font-size: 14px;
+    }
+  }
+  

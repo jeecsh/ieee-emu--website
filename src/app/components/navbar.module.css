@@ -4,11 +4,11 @@
 .logo {
   position: absolute; /* Fixed position relative to the navbar */
   left: 0px; /* Space from the left edge */
-  top: 30%;
+
   margin-top: 20px; /* Center vertically */
 /* Adjust for exact centering */
   z-index: 1001;
-  margin-right: 600px; /* Ensure logo stays above the navbar */
+  margin-right: 40px; /* Ensure logo stays above the navbar */
 }
 
 /* Styling for the navbar */
@@ -17,14 +17,25 @@
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  background-color: #000000; /* Dark background */
-
+  background-color: #000000; 
+  border: 0px solid black;
+  border-radius: 30px;/* Dark background */
+  position: absolute;
+  top: 50%; /* Vertically center in the page */
+  left: 50%; /* Horizontally center in the page */
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 90%;
   z-index: 1000; /* Ensure the navbar stays above other content */
   box-shadow: 0 0 15px #2f62b3b6; /* Glowing effect */
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transitions */
+}
+.togglericon{
+  font-size: 15px;
+  margin-right: 10px;
+color: #0056b3;
 }
 
 /* Hover effect for the navbar */
@@ -39,6 +50,12 @@
   color: #ffffff;
   margin-right: 20px;
    /* Custom color for brand */
+
+}
+.jj{
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
 }
 
 /* Styling for navigation links */
@@ -47,11 +64,15 @@
   text-decoration: none; /* Remove underline */
   margin: 0 15px; /* Space between navigation links */
   font-size: 16px; /* Font size of navigation links */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  transition: color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+
+ /* Fixed position relative to the navbar */
+   /* Smooth transition for hover effects */
 }
 
 .customNavLink:hover {
-  color: #00aaff; /* Hover color */
+  /* color: #244e92; Hover color */
   transform: scale(1.1); /* Slightly enlarge the link on hover */
 }
 
@@ -69,16 +90,7 @@
 }
 
 /* Styling for collapsed menu */
-.navbar-collapse {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the left */
-  width: 100%;
-  background-color: #111; /* Black background for the collapsed menu */
-  padding: 20px 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for the menu */
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-}
+
 
 .navbar-collapse.show {
   max-height: 500px; /* Sufficient height to accommodate the menu */
@@ -90,6 +102,38 @@
   opacity: 0;
   overflow: hidden; /* Hide overflow when collapsed */
 }
+/* src/components/navbar.module.css */
+
+/* Custom styles for the navbar */
+.customNavbar {
+  background-color: #000;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+.hideNavbar {
+  transform: translateZ(-100%); 
+  opacity: 0; /* Fade out effect */
+}
+
+/* When navbar is visible */
+.showNavbar {
+  transform: translateY(0); /* Reset sliding */
+  opacity: 1; /* Full opacity */
+}
+
+/* Styling for customNavLink (for better spacing and design) */
+.customNavLink {
+  color: white;
+  padding: 10px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.customNavLink:hover {
+  color: #0967cc; /* Change color on hover */
+}
+
 
 /* Styling for nav links in the collapsed menu */
 .nav-link {
@@ -97,7 +141,8 @@
   font-size: 18px; /* Font size for nav links in collapse */
   margin: 15px 0; /* Space between nav links */
   text-align: left;
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;  /* Smooth transition for hover effects */
 }
 
 .nav-link:hover {
@@ -107,49 +152,30 @@
   padding: 10px; /* Padding for better clickable area */
 }
 
-/* Responsive adjustments */
+
+
+
+/* src/styles.module.css */
+
+/* Existing styles... */
+
+/* Hide the sidebar and toggle button on larger screens */
 @media (min-width: 992px) {
-  .navbar-collapse {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      width: auto; /* Automatic width */
-      background-color: transparent; /* Transparent background for large screens */
-      box-shadow: none; /* No shadow on large screens */
-      padding: 0;
-  }
-
   .navbar-toggler {
-      display: none; /* Hide toggle button on large screens */
+    display: none; /* Hide toggle button on large screens */
   }
 
-  .logo {
-      position: relative; /* Adjust position for large screens */
-  }
-
-  .customNavbar {
-      padding: 10px 20px;
-  }
-
-  .customNavLink {
-      margin: 0 15px; /* Space between links in the navbar */
+  .sidebar {
+    display: none; /* Hide sidebar on large screens */
   }
 }
 
 @media (max-width: 992px) {
-  .logo {
-      position: absolute; /* Fix logo position for small screens */
-      left: 20px; /* Space from the left edge */
-      top: 10px; /* Space from the top */
-      transform: translateY(0); /* Adjust for exact positioning */
-  }
-
   .navbar-toggler {
-      margin-left: auto; /* Align toggle button to the right */
+    display: block; /* Show toggle button on small screens */
   }
-
-  .navbar-collapse {
-      align-items: flex-start; /* Align menu items to the left on small screens */
-      padding-top: 60px; /* Space from the top to avoid overlapping with the logo */
+  .customNavLink {
+    display: none;
   }
 }
+

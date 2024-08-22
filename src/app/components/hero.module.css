@@ -56,41 +56,59 @@ margin-top: 200px;
   margin-bottom: 20px;
   font-weight: bold;
   
+  
 }
 
 .heroContent p {
   font-size: 1.25em;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-out 1s forwards;
+  color: #cacaca;
 }
 
-.ctaButton {
+/* CSS Module: hero.module.css */
+
+/* General button styles */
+.ctabutton, .ctaButtonSecondary {
   display: inline-block;
-  background: #ffcc00;
-  color: #00274d;
-  padding: 15px 25px;
-  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
   text-decoration: none;
-  font-size: 1.1em;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  animation: fadeIn 1s ease-out 1.5s forwards;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  margin: 10px;
 }
 
-.ctaButton:hover {
-  background: #e0b900;
+/* Primary Button */
+.ctabutton {
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 87, 179, 0.4);
 }
 
+.ctabutton:hover {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  box-shadow: 0 6px 20px rgba(0, 87, 179, 0.6);
+  transform: translateY(-5px);
+}
+
+/* Secondary Button */
 .ctaButtonSecondary {
   background: transparent;
-
-  color: #ffcc00;
+  color: #0056b3;
+  border: 2px solid #0056b3;
 }
 
 .ctaButtonSecondary:hover {
-  background: #ffcc00;
-  color: #00274d;
+  background: #0056b3;
+  color: white;
+  border: 2px solid #007bff;
+  box-shadow: 0 4px 15px rgba(0, 87, 179, 0.3);
+  transform: translateY(-3px);
 }
+
 
 /* Keyframes for fade-in animation */
 @keyframes fadeIn {

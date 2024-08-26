@@ -48,7 +48,7 @@ export default function ColorSchemesExample() {
       {/* Apply the `hideNavbar` class when the navbar should be hidden */}
       <Navbar className={`${styles.customNavbar} ${!showNavbar ? styles.hideNavbar : ''}`} variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#" className={styles.customNavbarBrand}>
+          <Navbar.Brand href="/" className={styles.customNavbarBrand}>
             <div className={styles.logo}>
               <Image 
                 src="/ZD.png" // Provide the correct path to your logo

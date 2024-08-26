@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.heroSection {
+    position: fixed; /* Fixes the position relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    z-index: -1; /* Sends the background behind all other content */
+    margin: 0; /* Removes any margin */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.heroSection.visible {
+    opacity: 1; /* Becomes visible when the class is added */
+}
+
+.overlay {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000, #0056b3, #000);
+    animation: animate 5s linear infinite;
+    z-index: 1; /* Keeps overlay behind the bgSpan */
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.bgSpan {
+    position: relative;
+    display: block;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px);
+    background: #000000;
+    z-index: 2; /* Keeps bgSpan above the overlay */
+    transition: 1.5s;
+}
+
+.bgSpan:hover {
+    background: #0056b3;
+    transition: 1s;
+}
+
+.text {
+    position: absolute;
+    z-index: 3; /* Keeps text above the bgSpan */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: transparent;
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 2.5em;
+    color: #0056b3;
+}
+
+.text p {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.ctabutton,
+.ctaButtonSecondary {
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    background: #0056b3;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.ctaButtonSecondary {
+    background: #222;
+    color: #fff;
+}
+
+.ctabutton:hover,
+.ctaButtonSecondary:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .bgSpan {
+        width: calc(10vw - 2px);
+        height: calc(10vw - 2px);
+    }
+}
+
+@media (max-width: 600px) {
+    .bgSpan {
+        width: calc(20vw - 2px);
+        height: calc(20vw - 2px);
+    }
+}

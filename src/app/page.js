@@ -13,6 +13,7 @@ import MoreSection from "./components/morevi";
 import NewsletterSignup from "./components/newsletter"
 import LatestNews from "./components/news";
 import CounterStats  from "./components/statistics";
+import HeroSec from "./components/hero2";
 // import FAQSection from "./components/qustions";
 // import TextAnimation from "./components/slider";
 export default function Home() {
@@ -22,8 +23,9 @@ export default function Home() {
 <ResponsiveAppBar/>
 <AnimatedNumbers />
 <HeroSection/>
-<AboutUs />
 
+<AboutUs />
+<HeroSec/>
 
 <Promotion/>
 {/* <CounterStats /> */}

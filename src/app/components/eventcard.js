@@ -1,10 +1,13 @@
 import styles from './eventcard.module.css';
 
-const EventCard = ({ event }) => {  // Make sure event is destructured here
+const EventCard = ({ event }) => {
   const eventDate = new Date(event.date);
   const month = eventDate.toLocaleString('default', { month: 'short' });
   const day = eventDate.getDate();
   const year = eventDate.getFullYear();
+
+  // Validate and prepare the link
+  const validLink = event.link && (event.link.startsWith('http://') || event.link.startsWith('https://')) ? event.link : "#";
 
   return (
     <div className={styles.eventCard}>
@@ -17,25 +20,25 @@ const EventCard = ({ event }) => {  // Make sure event is destructured here
       <div className={styles.eventDetails}>
         <div className={styles.featured}>
           <span>🌟 Featured</span>
-          <span> {`${month} ${day} @ ${event.time}`}</span> {/* Display time */}
+          <span> {`${month} ${day} @ ${event.time}`}</span>
         </div>
 
         <h2 className={styles.title}>{event.title}</h2>
 
-        <p className={styles.location}>{event.location}</p> {/* Display location */}
+        <p className={styles.location}>{event.location}</p>
 
         <p className={styles.description}>{event.description}</p>
 
         <a
-          href="https://events.vtools.ieee.org/m/423971"
+          href={validLink}
           className={styles.registrationLink}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Registration Link
+          {event.link ? "Registration Link" : "No Registration Link"}
         </a>
 
-        <p className={styles.bio}>{event.bio}</p> {/* Display bio */}
+        <p className={styles.bio}>{event.bio}</p>
       </div>
     </div>
   );

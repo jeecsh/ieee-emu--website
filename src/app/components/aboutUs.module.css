@@ -6,8 +6,7 @@
  /* Light grey background */
     text-align: center;
     overflow: hidden;
-    background-size: cover; /* Ensure the image scales correctly */
-    background-position: center 30%; /* Adjust background position */
+    background:transparent;
     opacity: 0; /* Start hidden */
     transform: translateY(30px); /* Start off-screen */
     transition: opacity 1s ease-out, transform 1s ease-out;

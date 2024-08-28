@@ -34,7 +34,7 @@ export default function Home() {
 <Promotion/>
 {/* <CounterStats /> */}
 <AnimatedSection/>
-<MoreSection/>
+
 {/* <FAQSection/> */}
 {/* <TextAnimation /> */}
 <InfoSection />

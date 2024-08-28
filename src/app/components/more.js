@@ -1,47 +1,84 @@
-// components/AnimatedSection.js
 "use client";
-import React, { useEffect, useState } from 'react';
-import styles from './more.module.css'; // Import your CSS module
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
-export default function AnimatedSection() {
-  const [scrolling, setScrolling] = useState(false);
+import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import styles from './more.module.css';
 
-  const handleScroll = () => {
-    const section = document.getElementById('animated-section');
-    if (section) {
-      const { top, bottom } = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
+export default function EventsSection() {
+    const [firstSectionVisible, setFirstSectionVisible] = useState(true);
+    const [secondSectionVisible, setSecondSectionVisible] = useState(false);
+    const firstSectionRef = useRef(null);
+    const secondSectionRef = useRef(null);
 
-      if (top < viewportHeight && bottom > 0) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
-    }
-  };
+    useEffect(() => {
+        const handleScroll = () => {
+            const firstSectionTop = firstSectionRef.current.getBoundingClientRect().top;
+            const secondSectionTop = secondSectionRef.current.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+            // Check if the first section is in the viewport
+            if (firstSectionTop < windowHeight && firstSectionTop + windowHeight > 0) {
+                setFirstSectionVisible(true);
+            } else {
+                setFirstSectionVisible(false);
+            }
 
-  return (
-    <section id="animated-section" className={styles.animatedSection}>
-      <div
-        className={`${styles.background} ${scrolling ? styles.scrolling : ''}`}
-        style={{ backgroundImage: `url("/ZD.png")` }} // Apply the background image
-      />
-      <div className={styles.content}>
-        <h2 className={`${styles.heading} ${scrolling ? styles.fadeIn : ''}`}>Student Branch Events</h2>
-        </div>
-        <div className={styles.contentj}>
-        <p className={`${styles.paragraph} ${scrolling ? styles.fadeIn : ''}`}>
-          Our events are open to everyone, but IEEE student members receive priority registration and discounts. These events are tailored to your interests and offer valuable opportunities for involvement and leadership within the IEEE community.
-        </p>
-        <button className={styles.button}><p>See Events< KeyboardDoubleArrowRightIcon/> </p></button>
-      </div>
-    </section>
-  );
+            // Check if the second section is in the viewport
+            if (secondSectionTop < windowHeight && secondSectionTop + windowHeight > 0) {
+                setSecondSectionVisible(true);
+            } else {
+                setSecondSectionVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Check initial visibility
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <>
+            <section
+                className={`${styles.section} ${styles.firstSection} ${firstSectionVisible ? styles.firstVisible : ''}`}
+                ref={firstSectionRef}
+            >
+                <div className={styles.contentContainer}>
+                    <h2>Our Student Branch Events</h2>
+                    <p>
+                        Our events are open to everyone, but IEEE student members receive priority registration and discounts. These events are tailored to your interests and offer valuable opportunities for involvement and leadership within the IEEE community.
+                    </p>
+                    <button className={styles.ctaButton}>See Our Events</button>
+                </div>
+                <div className={styles.logoContainer}>
+                    <Image    
+                        src="/emu.png"
+                        alt="Floating Logo"
+                        width={300}
+                        height={300}
+                        className={styles.floatingLogo}
+                    />
+                </div>
+            </section>
+
+            <section
+                className={`${styles.section} ${styles.secondSection} ${secondSectionVisible ? styles.secondVisible : ''}`}
+                ref={secondSectionRef}
+            >
+                <div className={styles.contentContainer}>
+                    <h2> Project Support & Personal Development</h2>
+                    <p>    Partnering with IEEE for your projects offers branding benefits, funding opportunities, and assistance with recruitment and promotion. Additionally, being an IEEE member helps you develop key professional skills, including communication and leadership, while connecting you with a global network of professionals.</p>
+                    <button className={styles.ctaButton}>contact us</button>
+                </div>
+                <div className={styles.logoContainer}>
+                    <Image
+                        src="/pic.png"
+                        alt="Another Floating Logo"
+                        width={300}
+                        height={300}
+                        className={styles.floatingLogo}
+                    />
+                </div>
+            </section>
+        </>
+    );
 }

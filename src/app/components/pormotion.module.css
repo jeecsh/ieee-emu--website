@@ -2,6 +2,7 @@
   padding: 20px;
   background-color: transparent;
   height: 100vh;
+  overflow: hidden;
 }
 
 .counterRow {

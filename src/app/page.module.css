@@ -228,3 +228,105 @@ height: 50vh;;
     transform: rotate(0deg);
   }
 }
+
+/* Define the font face */
+@font-face {
+  font-family: "Syne";
+  src: url("/fonts/syne/Syne-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400 800; /* Define the range of weights */
+  font-style: normal;
+}
+
+/* Define specific weights */
+.syne-400 {
+  font-family: "Syne", sans-serif;
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
+.syne-500 {
+  font-family: "Syne", sans-serif;
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+}
+
+.syne-600 {
+  font-family: "Syne", sans-serif;
+  font-weight: 600; /* Semi-bold weight */
+  font-style: normal;
+}
+
+.syne-700 {
+  font-family: "Syne", sans-serif;
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
+
+.syne-800 {
+  font-family: "Syne", sans-serif;
+  font-weight: 800; /* Extra-bold weight */
+  font-style: normal;
+}
+/* Define the font face */
+@font-face {
+  font-family: "Lexend";
+  src: url("/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype"); /* Update path to the correct font file */
+  font-weight: 100 900; /* Define the range of weights available */
+  font-style: normal;
+}
+
+/* Define specific weights */
+.lexend-100 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 100; /* Thin weight */
+  font-style: normal;
+}
+
+.lexend-200 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 200; /* Extra-light weight */
+  font-style: normal;
+}
+
+.lexend-300 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 300; /* Light weight */
+  font-style: normal;
+}
+
+.lexend-400 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
+.lexend-500 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+}
+
+.lexend-600 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 600; /* Semi-bold weight */
+  font-style: normal;
+}
+
+.lexend-700 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
+
+.lexend-800 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800; /* Extra-bold weight */
+  font-style: normal;
+}
+
+.lexend-900 {
+  font-family: "Lexend", sans-serif;
+  font-weight: 900; /* Black weight */
+  font-style: normal;
+}
+  

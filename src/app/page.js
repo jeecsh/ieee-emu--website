@@ -14,8 +14,11 @@ import NewsletterSignup from "./components/newsletter"
 import LatestNews from "./components/news";
 import CounterStats  from "./components/statistics";
 import HeroSec from "./components/hero2";
+import FloatingLogos from "./components/logos";
+import Quote from "./components/qoute";
 // import FAQSection from "./components/qustions";
 // import TextAnimation from "./components/slider";
+import "./font.css";
 export default function Home() {
   return (
  <div>
@@ -23,9 +26,10 @@ export default function Home() {
 <ResponsiveAppBar/>
 <AnimatedNumbers />
 <HeroSection/>
-
-<AboutUs />
 <HeroSec/>
+<Quote/>
+<AboutUs />
+
 
 <Promotion/>
 {/* <CounterStats /> */}

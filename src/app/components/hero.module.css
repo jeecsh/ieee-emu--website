@@ -55,7 +55,8 @@ margin-top: 200px;
   font-size: 3em;
   margin-bottom: 20px;
   font-weight: bold;
-    
+  font-family: Orbitron;
+    letter-spacing: 2px;
   
 }
 
@@ -64,6 +65,7 @@ margin-top: 200px;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-out 1s forwards;
   color: #cacaca;
+  font-family: syne;
 }
 
 /* CSS Module: hero.module.css */
@@ -79,6 +81,7 @@ margin-top: 200px;
   border-radius: 25px;
   transition: all 0.3s ease;
   margin: 10px;
+  font-family: syne;
 }
 
 /* Primary Button */

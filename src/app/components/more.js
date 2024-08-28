@@ -35,6 +35,8 @@ export default function AnimatedSection() {
       />
       <div className={styles.content}>
         <h2 className={`${styles.heading} ${scrolling ? styles.fadeIn : ''}`}>Student Branch Events</h2>
+        </div>
+        <div className={styles.contentj}>
         <p className={`${styles.paragraph} ${scrolling ? styles.fadeIn : ''}`}>
           Our events are open to everyone, but IEEE student members receive priority registration and discounts. These events are tailored to your interests and offer valuable opportunities for involvement and leadership within the IEEE community.
         </p>

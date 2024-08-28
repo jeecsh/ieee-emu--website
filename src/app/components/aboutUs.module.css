@@ -1,162 +1,193 @@
 /* Container for the about us section */
 .aboutUsSection {
-    position: relative; /* Ensure that the background and content can be positioned correctly */
-    padding: 60px 20px;
-    height: 100vh;
- /* Light grey background */
-    text-align: center;
-    overflow: hidden;
-    background:transparent;
-    opacity: 0; /* Start hidden */
-    transform: translateY(30px); /* Start off-screen */
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    z-index: 1; /* Smooth transition */
-  }
-  
-  .aboutUsSection.visible {
-    opacity: 1; /* Make it visible */
-    transform: translateY(0); /* Slide into view */
-  }
-  
+  position: relative;
+  padding: 60px 20px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  opacity: 0; /* Start hidden */
+  transform: translateX(-30px); /* Start off-screen to the left */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  z-index: 1;
+  width: 100%;
 
-  
-  /* Keyframes for background animation */
+}
 
-  
-  /* Container for the content */
+/* When the section becomes visible */
+.aboutUsSection.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* IEEE logo styles */
+.ieeeLogo {
+  width: 300px; /* Adjust size as needed */
+  height: auto;
+  position: absolute; /* Position absolutely within the section */
+  top: 20px; /* Distance from the top */
+  left: 20px; 
+  animation: float 3s ease-in-out infinite; 
+  margin-left: 40px;/* Distance from the left */
+}
+
+/* Container for the content */
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  margin-left: 50px; /* Ensure space for the logo */
+  width: 100%;
+  margin-right: 100px; 
+
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Keyframes for floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Move up */
+  }
+  100% {
+    transform: translateY(0); /* Move back to original position */
+  }
+}
+
+/* Paragraph and button container */
+.textAndButtonContainer {
+  display: flex;
+  flex-direction: row; /* Align text and button horizontally */
+  align-items: center;
+  gap: 20px; /* Space between paragraph and button */
+  width: 100%; /* Ensure full width */
+}
+
+/* Paragraph styles */
+.aboutUsSection p {
+  font-size: 1.25em;
+  line-height: 1.6;
+  color: #d4d1d1;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
+  margin: 0;
+  width: 80%; /* Adjust width to ensure space for the button */
+}
+
+/* ctaButton styles */
+.ctaButton {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #0056b3; /* Border color */
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #0056b3;
+  white-space: nowrap;
+  width: 200px;
+  height: 50px;
+  margin-left: 30px; /* Max width for the button */
+  animation: float 3s ease-in-out infinite; /* Floating effect */
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #0056b3; /* Background color on hover */
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.ctaButton:hover::before {
+  left: 0;
+}
+
+.ctaButton:hover {
+  color: white;
+  transform: scale(1.05);
+  border-radius: 30px;
+  border-color: #0056b3;
+}
+
+.ctaButton p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: #ffffff;
+}
+
+.ctaButton p:hover {
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .aboutUsSection {
+    padding: 40px 10px;
+    flex-direction: column; /* Stack logo and content vertically */
+    align-items: center; /* Center items */
+  }
+
+  .ieeeLogo {
+    width: 120px; /* Adjust size for smaller screens */
+    position: static; /* Reset positioning for small screens */
+    margin: 0 auto 20px; /* Center the logo */
+  }
+
   .contentContainer {
-    max-width: 800px; /* Limit the width of the content */
-    margin: 0 auto; /* Center the content */
-    padding: 20px;
-    background: none; /* No background box */
-    border-radius: 0; /* No rounded corners */
-    box-shadow: none; /* No shadow */
-    position: relative; /* Position relative for animation */
-  }
-  
-  /* Heading styles */
-  .aboutUsSection h2 {
-    font-size: 2.5em;
-    font-weight: bolder ;
-    margin-bottom: 20px;
-    color: #0056b3; /* IEEE blue color */
-    position: relative; /* Position relative for animation */
-    display: inline-block; /* Inline block to center text animation */
-    opacity: 0; /* Start as hidden */
-    animation: fadeIn 1s ease-out 0.5s forwards; /* Apply fadeIn animation */
-  }
-  
-  /* Keyframes for fade-in animation */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  /* Paragraph styles */
-  .aboutUsSection p {
-    font-size: 1.25em;
-    line-height: 1.6;
-    color: #d4d1d1;
-    position: relative; /* Position relative for animation */
-    opacity: 0; /* Start as hidden */
-    animation: fadeIn 1s ease-out 1s forwards; /* Apply fadeIn animation */
-  }
-  
-  /* ctactaButton styles */
-  .ctaButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: transparent;
-
-    border: 2px solid transparent; /* Border color for initial state */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 15px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    z-index: 0; /* Smooth scaling effect */
-    display: flex; /* Enable flexbox */
-    align-items: center; /* Center text vertically */
-    justify-content: flex-end; /* Center text horizontally */
-    text-align: center;
-    margin-left: 600px;
-    color: #0056b3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 50px;
-  width: auto;
-  }
-  
-
-  .ctaButton::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+    margin-left: 0; /* Remove left margin for small screens */
     width: 100%;
-    height: 100%;
-    background-color: #0056b3; /* Background color on hover */
-    transition: left 0.3s ease; /* Animation for sliding effect */
-    z-index: 0; /* Ensure the background stays behind the text */
-   
   }
-  
-  
-  .ctaButton:hover::before {
-    left: 0;
+
+  .aboutUsSection p {
+    font-size: 1em;
+    width: 100%; /* Full width on smaller screens */
   }
-  
-  .ctaButton:hover {
-    color: white;
-    transform: scale(1.05);
-    border-radius: 10px;
+
+  .ctaButton {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    width: auto; /* Auto width within its container */
+    max-width: none; /* Remove max width constraint */
+    animation: none; /* Disable animation for small screens if needed */
   }
-  .ctaButton p {
-    position: relative;
-    z-index: 2;
-    margin-top: 10px;
-    color: #0056b3;
-     /* Ensure text is on top of the animated background */
-  } .ctaButton p:hover {
-    position: relative;
-    z-index: 2;
-    margin-top: 10px;
-    color: #ffffff;
-     /* Ensure text is on top of the animated background */
+}
+
+@media (max-width: 480px) {
+  .aboutUsSection {
+    padding: 20px 5px;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .aboutUsSection {
-      padding: 40px 10px;
-    }
-  
-    .aboutUsSection h2 {
-      font-size: 2em;
-    }
-  
-    .aboutUsSection p {
-      font-size: 1em;
-    }
+
+  .ieeeLogo {
+    width: 100px; /* Adjust size for even smaller screens */
   }
-  
-  @media (max-width: 480px) {
-    .aboutUsSection {
-      padding: 20px 5px;
-    }
-  
-    .aboutUsSection h2 {
-      font-size: 1.5em;
-    }
-  
-    .aboutUsSection p {
-      font-size: 0.875em;
-    }
+
+  .aboutUsSection p {
+    font-size: 0.875em;
   }
-  
+
+  .ctaButton {
+    font-size: 12px; /* Further adjustment for very small screens */
+  }
+}

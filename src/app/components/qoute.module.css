@@ -1,0 +1,85 @@
+/* styles/Quote.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 250vh; /* Increased viewport height */
+    overflow: hidden;
+    padding: 0 10%;
+    position: relative;
+    animation: backgroundMove 2s linear infinite;
+    margin-top: 70px;
+  }
+  
+  .quoteText {
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    position: relative;
+    margin: 60px 0; /* Increased margin for better spacing */
+    opacity: 0; /* Start fully transparent */
+    transform: translateX(-50px) scale(0.8); /* Start slightly off-screen and smaller */
+    transition: opacity 0.5s ease-in-out, transform 2s ease-in-out; 
+    font-family: syne;/* Longer transition */
+  }
+  
+  /* Glowing, scaling, and fade-in effect when in view */
+  .scrollInView {
+    opacity: 1; /* Fully opaque */
+    transform: translateX(0) scale(1); /* Move to original position and scale up */
+    transition: opacity 1s ease-in-out, transform 3s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Glowing animation */
+  .shapeYour,
+  .future,
+  .elevateYour,
+  .journey
+   {
+    font-size: 4rem; /* Default font size */
+    background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation: backgroundMove 30s linear infinite;
+  }
+  .with{
+    font-size: 3rem; /* Default font size */
+    background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s infinite linear;
+    animation: backgroundMove 30s linear infinite;
+ 
+
+
+  }
+
+  
+  .future {
+    font-size: 8rem; /* Larger font size */
+  }
+  
+  .journey {
+    font-size: 6rem; /* Larger font size */
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  @keyframes backgroundMove {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 200% 200%;
+    }
+  }
+  

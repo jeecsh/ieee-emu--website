@@ -1,8 +1,7 @@
-// components/AboutUs.js
 "use client"
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import React, { useEffect, useRef, useState } from 'react';
-import styles from './aboutUs.module.css'; // Ensure this CSS module exists
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import styles from './aboutUs.module.css';
 
 export default function AboutUs() {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,7 +15,7 @@ export default function AboutUs() {
           observer.disconnect(); // Stop observing once the section is visible
         }
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -35,13 +34,20 @@ export default function AboutUs() {
       className={`${styles.aboutUsSection} ${isVisible ? styles.visible : ''}`}
       ref={sectionRef}
     >
-      <div className={styles.back}></div>
+      {/* IEEE Logo */}
+      <img src="/ieee.png" alt="IEEE Logo" className={styles.ieeeLogo} />
+
+      {/* Content Container */}
       <div className={styles.contentContainer}>
-        <h2>About IEEE</h2>
-        <p>
-          The IEEE (Institute of Electrical and Electronics Engineers) is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE's core purpose is to foster technological innovation and excellence for the benefit of humanity.
+     
+        <div className={styles.textAndButtonContainer}>
+          <p>
+            The IEEE (Institute of Electrical and Electronics Engineers) is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE's core purpose is to foster technological innovation and excellence for the benefit of humanity.
           </p>
-          <button className={styles.ctaButton}><p>see ieee.org< KeyboardDoubleArrowRightIcon/> </p></button>
+          <button className={styles.ctaButton}>
+            <p>See ieee.org <KeyboardDoubleArrowRightIcon /></p>
+          </button>
+        </div>
       </div>
     </section>
   );

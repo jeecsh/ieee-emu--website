@@ -7,7 +7,7 @@
 }
 /* Footer styling */
 .footer {
-    background-color: #000000; /* Dark background color */
+    background-color: transparent; /* Dark background color */
     color: #fff; /* White text color */
     text-align: center; /* Center align text */
     padding: 20px; /* Padding around the text */
@@ -15,6 +15,7 @@
 margin-top: auto;
     width: 100%;
     margin-top: 50px; /* Full width */
+    font-family: orbitron;
   }
   
   

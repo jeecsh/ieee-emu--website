@@ -37,7 +37,7 @@ export default function Home() {
 
 {/* <FAQSection/> */}
 {/* <TextAnimation /> */}
-<InfoSection />
+
 <LatestNews />
 {/* <Cros/> */}
 <NewsletterSignup />

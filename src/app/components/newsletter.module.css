@@ -1,192 +1,279 @@
-/* styles/Subscribe.module.css */
-
+/* Container styles */
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
+    padding: 40px;
+    background: transparent;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+    flex-wrap: wrap;
+    margin-top: 90px;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Left section styles */
 .leftSection {
     flex: 1;
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 70px;
+    color: #fff;
+    padding-right: 40px;
+    animation: slideInLeft 1s ease-in-out;
+    min-width: 300px;
 }
 
-.rightSection {
-    width: 50%;
-    height: auto; /* Adjust height to fit content */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #2f61b3; /* Border color matching the glow */
-    border-radius: 20px;
-    background-color: #000000;
-    padding: 20px; /* Added padding for better spacing */
-    box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
-    transition: box-shadow 0.3s ease-in-out; /* Smooth transition effect */
-}
-
-.rightSection:hover {
-    box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* More intense glow on hover */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .heading {
-    font-size: 28px; /* Slightly larger font size */
-    margin-bottom: 15px;
-    color: #0056b3; /* Changed color to match the theme */
+    font-size: 5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: zoomIn 0.8s ease-in-out;
+    background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: syne;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .description {
-    font-size: 18px; /* Increased font size for better readability */
-    margin-bottom: 15px;
-    color: #c5c5c5; /* Darker color for better contrast */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
+/* Social media icons */
 .socialMediaSection {
     display: flex;
-    gap: 15px; /* Increased gap for better spacing */
+    gap: 15px;
 }
 
 .icon {
     color: #0056b3;
-    font-size: 20px; /* Slightly larger icons */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .icon:hover {
-    color: #2f61b3;
+    transform: scale(1.2);
+    color: #ffffff;
+}
+
+/* Right section styles */
+.rightSection {
+    flex: 1;
+    background: #000000;
+    padding: 30px;
+    border-radius: 15px;
+    animation: slideInRight 1s ease-in-out;
+    min-width: 300px;
+    box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
+    transition: box-shadow 0.3s ease-in-out; 
+    /* Center align container */
+  }
+.rightSection:hover {
+    box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* More intense glow on hover */
+}
+  
+
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .formHeading {
-    font-size: 28px; /* Consistent heading size */
-    margin-bottom: 15px;
-    color: #0056b3;
-    font-weight: bolder;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-family: syne;
 }
 
+/* Form styles */
 .form {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .label {
-    font-size: 18px; /* Larger font size */
-    margin-bottom: 8px;
-    color: #3060b3; /* Match the color of the description text */
+    font-size: 1.2rem;
+    color: #0056b3;
+    font-family: syne;
+    margin-bottom: 10px;
 }
 
 .input {
-    padding: 12px; /* Increased padding for better input field */
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px; /* Slightly larger border radius */
-    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
     width: 100%;
+    box-sizing: border-box;
+    font-family: syne;
+}
+
+.input:focus {
+    border-color: #6e85b7;
+    outline: none;
 }
 
 .button {
-    padding: 12px 25px; /* Increased padding for better button appearance */
-    font-size: 16px;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #0056b3;
+    ;
     border: none;
-    border-radius: 6px; /* Match border radius with input */
-    background-color: #2f61b3;
-    color: white;
+    border-radius: 5px;
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: syne;
 }
 
 .button:hover {
-    background-color: #324db3;
+    background-color: #0f75e2;
+    ;
+    transform: translateY(-2px);
 }
 
+/* Message styles */
 .message {
     margin-top: 20px;
-    font-size: 16px;
-    color: #0056b3;
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+    animation: popUp 0.5s ease-in-out;
 }
 
-/* Media Queries for Responsive Design */
+@keyframes popUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
-/* Mobile phones (portrait and landscape) */
-@media (max-width: 480px) {
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
     .container {
-        flex-direction: column; /* Stack sections vertically on small screens */
-        padding: 10px; /* Reduce padding */
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    .leftSection {
-        margin-right: 0; /* Remove margin on small screens */
-        margin-top: 20px; /* Reduced top margin */
+    .leftSection, .rightSection {
+        padding: 20px;
     }
 
-    .rightSection {
-        width: 100%; /* Make right section full width */
-        margin-top: 20px; /* Add margin on top */
+    .heading {
+        font-size: 2.5rem;
+        text-align: center;
     }
 
-    .heading, .formHeading {
-        font-size: 24px; /* Adjust font size for smaller screens */
-    }
-
-    .description, .label {
-        font-size: 16px; /* Adjust font size for smaller screens */
+    .formHeading {
+        font-size: 1.8rem;
     }
 }
 
-/* Tablets and small desktop screens */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack sections vertically on tablets */
-        padding: 15px; /* Reduce padding */
+    .heading {
+        font-size: 2rem;
     }
 
-    .leftSection {
-        margin-right: 0; /* Remove margin on tablets */
-        margin-top: 20px; /* Reduced top margin */
+    .description {
+        font-size: 1rem;
     }
 
-    .rightSection {
-        width: 100%; /* Make right section full width */
-        margin-top: 20px; /* Add margin on top */
+    .formHeading {
+        font-size: 1.5rem;
     }
 
-    .heading, .formHeading {
-        font-size: 26px; /* Adjust font size for tablets */
+    .input {
+        padding: 10px;
+        font-size: 0.9rem;
     }
 
-    .description, .label {
-        font-size: 17px; /* Adjust font size for tablets */
+    .button {
+        padding: 12px;
+        font-size: 1rem;
     }
 }
 
-/* Desktops and larger screens */
-@media (min-width: 1024px) {
-    .container {
-        flex-direction: row; /* Horizontal layout for larger screens */
-        padding: 20px; /* Standard padding */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.8rem;
     }
 
-    .leftSection {
-        margin-right: 20px; /* Restore margin for larger screens */
+    .description {
+        font-size: 0.9rem;
+        text-align: center;
     }
 
-    .rightSection {
-        width: 50%; /* Restore width for larger screens */
+    .socialMediaSection {
+        justify-content: center;
     }
 
-    .heading, .formHeading {
-        font-size: 28px; /* Maintain larger font size */
+    .formHeading {
+        font-size: 1.3rem;
     }
 
-    .description, .label {
-        font-size: 18px; /* Maintain font size */
+    .input {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .message {
+        font-size: 1rem;
     }
 }

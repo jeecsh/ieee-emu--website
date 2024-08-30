@@ -1,44 +1,52 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./movi.module.css";
 
-export default function AnotherSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import styles from './more.module.css';
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.2 }
+export default function EventsSection() {
+    const [isVisible, setIsVisible] = useState(true); // First section is always visible
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sectionTop = sectionRef.current.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            // Check if the section is in the viewport
+            if (sectionTop < windowHeight && sectionTop + windowHeight > 0) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Check initial visibility
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <section
+            className={`${styles.eventsSection} ${isVisible ? styles.visible : ''}`}
+            ref={sectionRef}
+        >
+            <div className={styles.contentContainer}>
+                <h2>Our Student Branch Events</h2>
+                <p>
+                    Our events are open to everyone, but IEEE student members receive priority registration and discounts. These events are tailored to your interests and offer valuable opportunities for involvement and leadership within the IEEE community.
+                </p>
+                <button className={styles.ctaButton}>See Our Events</button>
+            </div>
+            <div className={styles.logoContainer}>
+                <Image    
+                    src="/emu.png"
+                    alt="Floating Logo"
+                    width={300}
+                    height={300}
+                    className={styles.floatingLogo}
+                />
+            </div>
+        </section>
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <section
-      className={`${styles.section} ${isVisible ? styles.visible : styles.hidden}`}
-      ref={sectionRef}
-    >
-      <div className={styles.contentContainer}>
-        <h2>Another Section</h2>
-        <p>This is another section that overlaps the previous one.</p>
-        <button className={styles.ctaButton}>Learn More</button>
-      </div>
-    </section>
-  );
 }

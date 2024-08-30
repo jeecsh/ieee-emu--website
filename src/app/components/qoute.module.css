@@ -49,10 +49,8 @@
     background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shine 4s infinite linear;
+    animation: shine 6s infinite linear;
     animation: backgroundMove 30s linear infinite;
- 
-
 
   }
 

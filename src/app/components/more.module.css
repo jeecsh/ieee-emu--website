@@ -13,14 +13,14 @@
   overflow: hidden;
   transition: opacity 1s ease, transform 1s ease;
   z-index: 1;
+  margin-top: 30px;
 }
 
 /* First section styles */
 .firstSection {
+
   background: rgba(0, 0, 0, 0.7);
   transform: scale(0.8); /* Initial scale */
-
-
 }
 
 .firstVisible {
@@ -30,7 +30,10 @@
 
 /* Second section styles */
 .secondSection {
-  background: transparent;
+position: absolute;
+top: -100px;
+  background: linear-gradient(45deg, #005199, #0289ff);
+  opacity: 10%;
   position: relative; /* Ensure it stacks correctly after the first section */
   opacity: 0;
   transform: scale(0.5); /* Initial scale */
@@ -40,7 +43,24 @@
 .secondVisible {
   transform: scale(1); /* Increase scale when visible */
   opacity: 1; /* Fully opaque */
-  
+}
+
+/* Third section styles */
+.thirdSection {
+  position: absolute;
+  top: -150px;
+  background: linear-gradient(45deg, #ff5722, #ff9800);
+
+  opacity: 10%;
+  position: relative; /* Ensure it stacks correctly after the second section */
+  opacity: 0;
+  transform: scale(0.5); /* Initial scale */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.thirdVisible {
+  transform: scale(1); /* Increase scale when visible */
+  opacity: 1; /* Fully opaque */
 }
 
 /* Content container styling */
@@ -55,13 +75,14 @@
 }
 
 /* Heading styles */
-.contentContainer h2 {
+.hhh{
   font-size: 3em;
   font-weight: 700;
   margin-bottom: 20px;
   background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family:  syne;
 }
 
 /* Paragraph styles */
@@ -79,16 +100,17 @@
   font-weight: 600;
   color: #ffffff;
   background-color: transparent;
-  border: 2px solid #0056b3;
+  border: 2px solid #ffffff;
   border-radius: 30px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-family: syne;
 }
 
 .ctaButton:hover {
-  background-color: #0f9fff;
+  background-color: #026ada;
   color: #fff;
   transform: scale(1.05);
 }
@@ -96,6 +118,22 @@
 /* Floating logo styling */
 .floatingLogo {
   animation: float 3s ease-in-out infinite;
+}
+.h3{
+    font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0b3058;
+  font-family: syne;
+}
+
+.h {
+  color:#002a68;
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: syne;
+
 }
 
 @keyframes float {
@@ -143,5 +181,76 @@
   .ctaButton {
       padding: 8px 16px;
       font-size: 0.9em;
+  }
+}
+/* Trigger Button styling */
+.triggerButton {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0056b3;
+  border: 2px solid #0056b3;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: syne;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.triggerButton:hover {
+  background-color: #0f9fff;
+  transform: scale(1.05);
+}
+
+/* Fourth section styles */
+.fourthSection {
+  position: absolute;
+  top: -250px;
+  background: linear-gradient(45deg, #8e44ad, #c0392b);
+  opacity: 10%;
+  position: relative; /* Ensure it stacks correctly after the third section */
+  opacity: 0;
+  transform: scale(0.5); /* Initial scale */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fourthVisible {
+  transform: scale(1); /* Increase scale when visible */
+  opacity: 1; /* Fully opaque */
+}
+
+.h4 {
+  color: #002a68;
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: syne;
+
+}
+/* Container for the up arrow */
+.upArrowContainer {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px;  /* Adjust as needed */
+  z-index: 10;
+}
+
+/* Up arrow styling */
+.upArrow {
+  color: #ffffff; /* Adjust the color */
+  background-color:transparent; /* Adjust the background color */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  animation: jump 1s infinite;
+}
+
+/* Jumping animation */
+@keyframes jump {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-15px);
   }
 }

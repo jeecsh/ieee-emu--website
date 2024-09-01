@@ -111,13 +111,14 @@
 
 @media (max-width: 480px) {
   .container {
-    height: 150vh;
+    height: 200vh;
     overflow-y: auto;
     overflow: hidden;
   }
   .quoteText {
     font-size: 3.5rem; /* Adjust font size */
     margin: 40px 0; /* Adjust margin */
+    
   }
 
 }

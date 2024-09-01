@@ -46,7 +46,7 @@
     border: 2px solid #0056b3; /* IEEE Blue border */
     border-radius: 30px; /* More rounded corners */
     background-color: transparent; /* Transparent background */
-    color: #0056b3; /* IEEE Blue text color */
+    color: #ffffff; /* IEEE Blue text color */
     text-decoration: none; /* Remove underline */
     cursor: pointer;
     text-transform: uppercase; /* Uppercase text */

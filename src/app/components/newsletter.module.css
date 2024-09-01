@@ -169,7 +169,7 @@
     color: #fff;
     background: transparent;
     ;
-    border: 1px solid #005199;
+    border: 2px solid #005199;
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;

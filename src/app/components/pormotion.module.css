@@ -1,8 +1,8 @@
 .promotion {
   padding: 20px;
   background-color: transparent;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh; /* Ensure full height but allow expansion */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 .counterRow {
@@ -23,6 +23,7 @@
   font-size: 1.5rem;
   color: #0056b3;
   font-weight: bold;
+  font-family: orbitron;
 }
 
 .answer {
@@ -31,6 +32,7 @@
   margin-top: 10px;
   opacity: 0;
   animation: fadeInOut 8s ease-in-out infinite; /* Match JS cycle */
+  font-family: syne;
 }
 
 /* Keyframes for fade-in and fade-out animation */
@@ -62,6 +64,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  font-family: syne;
 }
 
 .counterNumber {
@@ -72,6 +75,7 @@
 .counterLabel {
   font-size: 1.5rem;
   color: #666;
+  font-family: orbitron;
 }
 
 .counterDescription {
@@ -149,6 +153,11 @@
 
 /* Small screens (Mobile) */
 @media (min-width: 480px) and (max-width: 767px) {
+  .promotion{
+    overflow: hidden;
+    height: 500vh;
+
+  }
   .question {
     font-size: 1.2rem;
   }
@@ -179,6 +188,7 @@
   .counterDescription {
     font-size: 0.9rem;
   }
+
 }
 
 /* Extra small screens (Very small mobile) */

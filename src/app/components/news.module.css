@@ -159,7 +159,7 @@
 @media (min-width: 481px) and (max-width: 768px) {
 
     .newsItem {
-        width: 50%; /* Two columns */
+        width: 90%; /* Two columns */
     }
     .header .h2 {
         font-size: 2.5rem; /* Adjust font size */

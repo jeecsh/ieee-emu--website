@@ -36,24 +36,24 @@ export default function Hero() {
 
   return (
     <section
+      id='hero'
       ref={sectionRef} // Ensure the ref is attached
       className={`${styles.heroSection} ${isVisible ? styles.visible : ''}`}
     >
       <div className={styles.heroContent}>
-        <div  className={styles.log} >
-        <Image 
-          src="/ZD.png" // Provide the correct path to your logo
-          alt="Logo"
-          width={380} // Adjust width as needed
-          height={380} // Adjust height as needed
-         
-        />
-         </div>
-         <div className={styles.text}>
-        <h1 >Welcome to IEEE EMU Student Branch</h1>
-        <p>Empowering Innovation, Networking, and Leadership in Engineering and Technology</p>
-        <a href="#events" className={styles.ctabutton}>Join Us Now</a>
-        <a href="#about" className={styles.ctaButtonSecondary}>Learn More</a>
+        <div className={styles.log}>
+          <Image 
+            src="/ZD.png" // Provide the correct path to your logo
+            alt="Logo"
+            width={380} // Adjust width as needed
+            height={380} // Adjust height as needed
+          />
+        </div>
+        <div className={styles.text}>
+          <h1>Welcome to IEEE EMU Student Branch</h1>
+          <p>Empowering Innovation, Networking, and Leadership in Engineering and Technology</p>
+          <a href="https://forms.gle/example" className={styles.ctabutton}>Join Us Now</a>
+          <a href="/learnMore" className={styles.ctaButtonSecondary}>Learn More</a>
         </div>
       </div>
     </section>

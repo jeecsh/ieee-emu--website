@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useRef, useState } from 'react';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import styles from './aboutUs.module.css';
@@ -31,6 +31,7 @@ export default function AboutUs() {
 
   return (
     <section
+      id="aboutus"
       className={`${styles.aboutUsSection} ${isVisible ? styles.visible : ''}`}
       ref={sectionRef}
     >
@@ -39,14 +40,15 @@ export default function AboutUs() {
 
       {/* Content Container */}
       <div className={styles.contentContainer}>
-     
         <div className={styles.textAndButtonContainer}>
           <p>
             The IEEE (Institute of Electrical and Electronics Engineers) is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE's core purpose is to foster technological innovation and excellence for the benefit of humanity.
           </p>
-          <button className={styles.ctaButton}>
-            <p>See ieee.org <KeyboardDoubleArrowRightIcon /></p>
-          </button>
+          <a href="https://www.ieee.org" target="_blank" rel="noopener noreferrer">
+            <button className={styles.ctaButton}>
+              <p>See ieee.org <KeyboardDoubleArrowRightIcon /></p>
+            </button>
+          </a>
         </div>
       </div>
     </section>

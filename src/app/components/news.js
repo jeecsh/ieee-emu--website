@@ -68,10 +68,10 @@ import styles from './news.module.css';
 
 export default function LatestNews() {
   // Slice the array to ensure only the latest 4 news items are displayed
-  const latestNews = newsData.slice(0, 6);
+  const latestNews = newsData.slice(0, 4);
 
   return (
-    <div className={styles.newsContainer}>
+    <div className={styles.newsContainer} id="news">
       <div className={styles.header}>
         <h2 className={styles.h2}>See Our Latest News</h2>
         <Link href="/news" className={styles.seeAllButton}>

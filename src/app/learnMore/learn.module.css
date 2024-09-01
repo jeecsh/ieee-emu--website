@@ -1,0 +1,199 @@
+/* General Page Styling */
+.pageContainer {
+  padding: 50px;
+  background: #000; /* Black background */
+  color: #fff; /* White text */
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 80%; /* Center the content and add margins */
+  margin-top: 100px;
+  position: relative;
+}
+
+/* Title Styling */
+.title {
+  font-size: 3em;
+  font-weight: 700;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Syne', sans-serif;
+  animation: fadeIn 2s ease-out;
+  text-align: center; /* Center align title */
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 60px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+  border-radius: 15px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  animation: slideIn 1s ease-out;
+  box-shadow: 0 0 15px rgba(47, 98, 179, 0.7); /* Glowing effect */
+  position: relative;
+}
+
+/* Enhanced hover effect on section */
+.section:hover {
+  box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* Enhanced glow on hover */
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.02);
+}
+
+/* Button Styling */
+.ctaButton {
+  display: inline-block;
+  width: calc(100% - 40px); /* Full width with padding */
+  max-width: 300px; /* Restrict maximum width */
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #0056b3;
+  border: none; /* Removed border */
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Syne', sans-serif;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* Ensures the button text is not underlined */
+  text-align: center; /* Center text within button */
+  margin-right: 30px;
+}
+.hh{
+  color: #005199;
+  font-family: syne;
+  margin-bottom: 50px;
+  }
+
+.ctaButton:hover {
+  background-color: #0f9fff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.ctaButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* FAQ Item Styling */
+.faqItem {
+  margin-bottom: 40px;
+}
+
+.faqItem h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #005199;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #007bff; /* Line under the heading */
+}
+
+.faqItem p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Alert Message Styling */
+.alert {
+  color: #707070;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Contact Link Styling */
+.contactLink {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+
+/* For Tablets and Larger Mobile Devices */
+@media (max-width: 768px) {
+  .pageContainer {
+    width: 90%; /* Reduce margin */
+    padding: 30px; /* Adjust padding */
+  }
+
+  .title {
+    font-size: 2.5em; /* Slightly smaller title */
+  }
+
+  .section {
+    padding: 20px; /* Adjust padding */
+  }
+
+  .ctaButton {
+    width: 100%; /* Full width buttons */
+    font-size: 1em; /* Adjust font size */
+    padding: 10px 15px; /* Adjust padding */
+    margin-right: 0; /* Remove margin-right */
+  }
+
+  .faqItem h3 {
+    font-size: 1.4rem; /* Adjust heading size */
+  }
+
+  .faqItem p {
+    font-size: 0.9rem; /* Adjust paragraph size */
+  }
+}
+
+/* For Smaller Mobile Devices */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2em; /* Smaller title for small screens */
+    margin-bottom: 20px; /* Reduce margin */
+  }
+
+  .section {
+    padding: 15px; /* Further reduce padding */
+  }
+
+  .ctaButton {
+    width: 100%; /* Full width buttons */
+    font-size: 0.9em; /* Smaller font size */
+    padding: 8px 12px; /* Adjust padding */
+  }
+
+  .faqItem h3 {
+    font-size: 1.2rem; /* Smaller heading */
+  }
+
+  .faqItem p {
+    font-size: 0.8rem; /* Smaller paragraph text */
+  }
+}

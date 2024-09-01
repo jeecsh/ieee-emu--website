@@ -157,3 +157,6 @@ body {
 }
 
 /* Add other weights if necessary */
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}

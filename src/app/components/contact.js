@@ -4,13 +4,13 @@ import Footer from '../components/footer'; // Import the Footer component
 
 export default function ContactUs() {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="contact">
       <div className={styles.contactSection}>
         <h2 className={styles.hdd}>Contact Us</h2>
         <div className={styles.contactContainer}>
           <div className={styles.contactInfo}>
             <p>If you have any inquiries regarding our club, or would like to reach out to us about our events, please send us an email!</p>
-            <p><strong>Email Us:</strong> <a href="mailto:general@ieee.utoronto.ca" className={styles.email}>general@ieee.utoronto.ca</a></p>
+            <p><strong>Email Us:</strong> <a href="mailto:ieee.emubranch@gmail.com" className={styles.email}>ieee.emubranch@gmail.com</a></p>
             <p><strong>Address:</strong></p>
             <p>
               Electrical and Electronic Engineering Department,<br />
@@ -20,7 +20,7 @@ export default function ContactUs() {
           </div>
           <div className={styles.mapContainer}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2042.6882621542646!2d33.9077062!3d35.1445899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dfc9e09b82fb0b%3A0x780d6ce9c3dc8cca!2sDepartment%20of%20Electrical%20%26%20Electronic%20Engineering!5e0!3m2!1sen!2str!4v1691940529175!5m2!1sen!2str"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.478466483555!2d33.90496427478706!3d35.144686272765085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dfc9e09b1ff08b%3A0xc461826ee03224e1!2sElectrical%20and%20Electronics%20Engineering%2C%20Gazima%C4%9Fusa%2099450!5e0!3m2!1sen!2s!4v1725114196303!5m2!1sen!2s"
               width="100%"
               height="250"
               style={{ border: 0 }}

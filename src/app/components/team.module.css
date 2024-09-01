@@ -1,0 +1,204 @@
+/* General Styling */
+.ourTeam {
+    padding: 50px;
+    color: #fff;
+    font-family: syne;
+  }
+  .memberTitle{
+    color: #005199;
+  }
+  
+  /* Executive Board and Committees Section Styling */
+  .executiveBoard, .committees {
+    background: rgba(0, 0, 0, 0.7); /* Black transparent overlay */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .executiveBoard h2, .committees h2 {
+    font-size: 3em; /* Larger font size for section headers */
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: syne;
+    font-weight: bolder;
+  }
+  
+  /* Executive Board Member Styling */
+  .memberList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .member {
+    text-align: center;
+    margin: 20px;
+    font-size: 1em;
+    color: #ffffff;
+    margin-top: 20px;
+    font-family: syne;
+  }
+  
+  .memberImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #fff; /* White border around images */
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transitions */
+  }
+  
+  .memberImage:hover {
+    box-shadow: 0 0 15px #2f62b3b6; /* Glowing effect */
+  }
+  
+  /* Committees Navigation Styling */
+  .committeeNav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .committeeNavItem {
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+    color: #ccc;
+    position: relative;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .committeeNavItem:hover {
+    color: #fff;
+  }
+  
+  .active {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .navLine {
+    position: absolute;
+    bottom: -2px;
+    height: 4px;
+    width: 20%; /* Adjust this to match the width of a single nav item */
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+  
+  /* Committee Member Styling */
+  .committeeList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .committeeMember {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex-basis: calc(33.33% - 20px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+  
+  .committeeMember:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .committeeMemberImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular images for committee members */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #fff; /* White border around images */
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transitions */
+  }
+  
+  .committeeMemberImage:hover {
+    box-shadow: 0 0 15px #2f62b3b6; /* Glowing effect */
+  }
+  
+  .committeeMemberName {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .committeeMemberTitle {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .committeeMember {
+      flex-basis: calc(50% - 10px);
+    }
+  
+    .executiveBoard h2, .committees h2 {
+      font-size: 48px;
+    }
+  
+    .committeeNav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .committeeNavItem {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+    }
+  
+    .navLine {
+      width: 50%; /* Adjust to fit better on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .committeeMember {
+      flex-basis: 100%;
+    }
+  
+    .executiveBoard h2, .committees h2 {
+      font-size: 36px;
+    }
+  
+    .committeeNav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .committeeNavItem {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+    }
+  
+    .navLine {
+      width: 100%; 
+      opacity: 0;/* Full width on the smallest screens */
+    }
+  }
+  

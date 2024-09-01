@@ -1,10 +1,10 @@
-// components/Quote.js
 "use client"
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './qoute.module.css';
 
 export default function Quote() {
   const [visibleSections, setVisibleSections] = useState([]);
+  const containerRef = useRef(null); // Ref to the container
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,33 +26,48 @@ export default function Quote() {
       setVisibleSections(currentlyVisible);
     };
 
+    const handleScrollResistance = () => {
+      if (containerRef.current) {
+        const scrollY = window.scrollY;
+        // Apply a transform to create resistance
+        // Lower multiplier value will create more resistance
+        containerRef.current.style.transform = `translateY(${scrollY * 0.1}px)`;
+      }
+    };
+
+    // Add scroll event listeners
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScrollResistance);
     handleScroll(); // Trigger on initial load
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Clean up event listeners
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScrollResistance);
+    };
   }, []);
 
   return (
-    <div className={styles.container}>
-    <div className={styles.gradientOverlay}></div>
-    <h1 className={`${styles.quoteText} ${styles.shapeYour} ${visibleSections.includes(0) ? styles.scrollInView : ''}`}>
+    <div ref={containerRef} className={styles.container}>
+      <div className={styles.gradientOverlay}></div>
+      <h1 className={`${styles.quoteText} ${styles.shapeYour} ${visibleSections.includes(0) ? styles.scrollInView : ''}`}>
         Shape your
-    </h1>
-    <h1 className={`${styles.quoteText} ${styles.future} ${visibleSections.includes(1) ? styles.scrollInView : ''}`}>
+      </h1>
+      <h1 className={`${styles.quoteText} ${styles.future} ${visibleSections.includes(1) ? styles.scrollInView : ''}`}>
         Future
-    </h1>
-    <h1 className={`${styles.quoteText} ${styles.elevateYour} ${visibleSections.includes(2) ? styles.scrollInView : ''}`}>
-       And
-    </h1>
-    <h1 className={`${styles.quoteText} ${styles.elevateYour} ${visibleSections.includes(2) ? styles.scrollInView : ''}`}>
+      </h1>
+      <h1 className={`${styles.quoteText} ${styles.elevateYour} ${visibleSections.includes(2) ? styles.scrollInView : ''}`}>
+        And
+      </h1>
+      <h1 className={`${styles.quoteText} ${styles.elevateYour} ${visibleSections.includes(2) ? styles.scrollInView : ''}`}>
         Elevate your academic
-    </h1>
-    <h1 className={`${styles.quoteText} ${styles.journey} ${visibleSections.includes(3) ? styles.scrollInView : ''}`}>
+      </h1>
+      <h1 className={`${styles.quoteText} ${styles.journey} ${visibleSections.includes(3) ? styles.scrollInView : ''}`}>
         Journey
-    </h1>
-    <h1 className={`${styles.quoteText} ${styles.with} ${visibleSections.includes(3) ? styles.scrollInView : ''}`}>
-      With
-    </h1>
-</div>  
+      </h1>
+      <h1 className={`${styles.quoteText} ${styles.with} ${visibleSections.includes(4) ? styles.scrollInViewWith : ''}`}>
+        With
+      </h1>
+    </div>  
   );
 }

@@ -82,6 +82,8 @@ margin-top: 200px;
   transition: all 0.3s ease;
   margin: 10px;
   font-family: syne;
+  text-decoration: none; /* Ensure the button text is not underlined */
+  text-align: center; /* Center text within button */
 }
 
 /* Primary Button */

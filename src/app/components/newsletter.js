@@ -2,7 +2,7 @@
 "use client";
 import { useState } from 'react';
 import styles from './newsletter.module.css';
-import { Facebook,  Instagram } from '@mui/icons-material';
+import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
 import XIcon from '@mui/icons-material/X';
 import { IconButton } from '@mui/material';
 
@@ -26,16 +26,15 @@ export default function Subscribe() {
     return (
         <div className={styles.container}>
             <div className={styles.leftSection}>
-                <h2 className={styles.heading}>Stay Updated!</h2>
+                <h1 className={styles.heading}>Stay Updated!</h1>
                 <p className={styles.description}>
-                   
-Stay ahead in the world of electrical and computer engineering with IEEE EMU SB! Follow our channels and Join our newsletter to receive the latest news and updates directly to your inbox.<br/>
+                    Stay ahead in the world of electrical and computer engineering with IEEE EMU SB! Follow our channels and Join our newsletter to receive the latest news and updates directly to your inbox.<br/>
                     Don't miss out on important announcements and exclusive content.
                 </p>
                 <div className={styles.socialMediaSection}>
                     <IconButton 
                         component="a" 
-                        href="https://facebook.com" 
+                        href="https://www.facebook.com/ieee.emu.student.branch" 
                         target="_blank" 
                         aria-label="Facebook"
                         className={styles.icon}
@@ -44,7 +43,7 @@ Stay ahead in the world of electrical and computer engineering with IEEE EMU SB!
                     </IconButton>
                     <IconButton 
                         component="a" 
-                        href="https://twitter.com" 
+                        href="https://twitter.com/Ieee_emusb?t=pQRMkLsAyZG7QxZTBFjAXQ&s=09" 
                         target="_blank" 
                         aria-label="Twitter"
                         className={styles.icon}
@@ -53,12 +52,21 @@ Stay ahead in the world of electrical and computer engineering with IEEE EMU SB!
                     </IconButton>
                     <IconButton 
                         component="a" 
-                        href="https://instagram.com" 
+                        href="https://www.instagram.com/ieee_emu/?igsh=MWpnbzRlc2thcjRpMw%3D%3D" 
                         target="_blank" 
                         aria-label="Instagram"
                         className={styles.icon}
                     >
                         <Instagram />
+                    </IconButton>
+                    <IconButton 
+                        component="a" 
+                        href="https://linkedin.com" 
+                        target="_blank" 
+                        aria-label="LinkedIn"
+                        className={styles.icon}
+                    >
+                        <LinkedIn />
                     </IconButton>
                 </div>
             </div>

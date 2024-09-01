@@ -1,5 +1,3 @@
-/* src/components/sidebar.module.css */
-
 /* Sidebar styling */
 .sidebar {
   position: fixed;
@@ -19,7 +17,6 @@
   z-index: 999; /* Ensure it's above other content */
   border-radius: 20px; /* Rounded corners for a smoother look */
   overflow: hidden; /* Prevent overflowing content */
-  border: 0px solid white;
 }
 
 /* Sidebar when open */
@@ -37,14 +34,14 @@
   cursor: pointer;
   z-index: 1000; /* Ensure it's above sidebar content */
 }
-.kk{
-  margin-top: 40px;
+
+.kk {
+  margin-top: 40px; 
   width: 100%;
 }
 
 /* Custom Nav link styling */
 .customNavLink {
-
   color: #ffffff; /* Link color */
   font-size: 18px; /* Font size for nav links */
   margin: 15px 0; /* Space between nav links */
@@ -52,17 +49,16 @@
   width: 100%; /* Full width of sidebar */
   padding: 10px 20px; /* Padding for better clickable area */
   text-decoration: none;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  border-radius: 20px; 
- /* Smooth transition for hover effects */
+  transition: color 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+  border-radius: 20px; /* Rounded corners */
 }
 
 /* Hover effect for custom nav links */
 .customNavLink:hover {
-  color: #ffffff; /* Hover text color */
-  background-color: #b3920049; /* Darker background on hover */
-  border-radius: 20px; 
-/* Rounded corners */
+  background-color: #0056b3; /* New hover background color */
+  color: #ffffff; /* Keep text white */
+  border-radius: 10px; /* Increased rounded corners */
+  padding: 12px 25px; /* Increased padding for hover state */
 }
 
 /* Responsive design for smaller screens */
@@ -80,17 +76,10 @@
       top: 50px; /* Adjusted top position */
       box-shadow: 0 0 15px #2f62b3b6; /* Glowing effect */
       transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transitions */
-    
-    }
+  }
 }
 
-/* Additional custom link hover and active styles */
-.customNavLink:hover {
-  background-color: #0056b3; /* New hover background color */
-  color: #ffffff; /* Keep text white */
-  border-radius: 10px; /* Increased rounded corners */
-  padding: 12px 25px; /* Increased padding for hover state */
-}
+/* Enhanced hover effect on sidebar */
 .sidebar:hover {
   box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* Enhanced glow on hover */
 }

@@ -11,73 +11,119 @@
     position: relative;
     animation: backgroundMove 2s linear infinite;
     margin-top: 70px;
+    overflow-y: auto;
   }
-  
+  /* qoute.module.css */
+.container {
+  position: relative;
+  overflow: hidden; /* Ensure no overflow of content */
+  /* Add any additional styles you need */
+}
+
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none; /* Make sure the overlay doesn’t interfere with interactions */
+}
+
+/* Adjust styles for scroll animation */
+/* Adjust styles for scroll animation */
+.quoteText {
+  transition: transform 0.3s ease-out;
+}
+
+.quoteText {
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  position: relative;
+  margin: 60px 0; /* Increased margin for better spacing */
+  opacity: 0; /* Start fully transparent */
+  transform: translateX(-50px) scale(0.8); /* Start slightly off-screen and smaller */
+  transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
+  font-family: syne; /* Longer transition */
+}
+
+/* Glowing, scaling, and fade-in effect when in view */
+.scrollInView {
+  opacity: 1; /* Fully opaque */
+  transform: translateX(0) scale(1); /* Move to original position and scale up */
+  transition: opacity 1s ease-in-out, transform 3s ease-in-out; /* Smooth transition */
+}
+
+/* Glowing animation */
+.shapeYour,
+.future,
+.elevateYour,
+.journey {
+  font-size: 4rem; /* Default font size */
+  background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation: backgroundMove 30s linear infinite;
+}
+
+.with {
+  font-size: 3rem; /* Default font size */
+  background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s infinite linear;
+}
+
+/* Custom class for 'With' to stay visible longer */
+.scrollInViewWith {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition: opacity 1s ease-in-out, transform 4s ease-in-out; /* Longer visibility duration */
+}
+
+/* Font sizes for different sections */
+.future {
+  font-size: 8rem; /* Larger font size */
+}
+
+.journey {
+  font-size: 6rem; /* Larger font size */
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    height: 100vh;
+    overflow-y: auto;
+    overflow: hidden;
+  }
   .quoteText {
-    font-family: 'Courier New', Courier, monospace;
-    color: #fff;
-    position: relative;
-    margin: 60px 0; /* Increased margin for better spacing */
-    opacity: 0; /* Start fully transparent */
-    transform: translateX(-50px) scale(0.8); /* Start slightly off-screen and smaller */
-    transition: opacity 0.5s ease-in-out, transform 2s ease-in-out; 
-    font-family: syne;/* Longer transition */
-  }
-  
-  /* Glowing, scaling, and fade-in effect when in view */
-  .scrollInView {
-    opacity: 1; /* Fully opaque */
-    transform: translateX(0) scale(1); /* Move to original position and scale up */
-    transition: opacity 1s ease-in-out, transform 3s ease-in-out; /* Smooth transition */
-  }
-  
-  /* Glowing animation */
-  .shapeYour,
-  .future,
-  .elevateYour,
-  .journey
-   {
-    font-size: 4rem; /* Default font size */
-    background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 3s infinite linear;
-    animation: backgroundMove 30s linear infinite;
-  }
-  .with{
-    font-size: 3rem; /* Default font size */
-    background: linear-gradient(45deg, #005199, #0289ff); /* Blue gradient */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 6s infinite linear;
-    animation: backgroundMove 30s linear infinite;
-
+    font-size: 3.5rem; /* Adjust font size */
+    margin: 40px 0; /* Adjust margin */
   }
 
-  
-  .future {
-    font-size: 8rem; /* Larger font size */
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 150vh;
   }
-  
-  .journey {
-    font-size: 6rem; /* Larger font size */
-  }
-  
-  @keyframes shine {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
-  }
-  
-  @keyframes backgroundMove {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 200% 200%;
-    }
-  }
-  
+}

@@ -20,8 +20,11 @@
     height:220px;
     box-shadow: 0 0 20px #2f62b3b6; /* Enhanced blue glow effect */
     transition: box-shadow 0.3s ease-in-out; /* Smooth transition effect */
+ 
 }
-
+.counterLabel{
+  font-family: syne;
+}
 .counterDiv:hover {
     box-shadow: 0 0 30px rgba(0, 112, 243, 0.8); /* More intense glow on hover */
 }

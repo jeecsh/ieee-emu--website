@@ -138,7 +138,7 @@
 
 .label {
     font-size: 1.2rem;
-    color: #0056b3;
+    color: #ffffff;
     font-family: syne;
     margin-bottom: 10px;
 }
@@ -146,17 +146,19 @@
 .input {
     padding: 12px;
     font-size: 1rem;
-    border: 2px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    background: #00529913;
     margin-bottom: 20px;
     transition: border-color 0.3s ease;
     width: 100%;
     box-sizing: border-box;
     font-family: syne;
+    color: #ffffff;
 }
 
 .input:focus {
-    border-color: #6e85b7;
+    border-color: #005199;
     outline: none;
 }
 
@@ -165,10 +167,10 @@
     font-size: 1.1rem;
     font-weight: bold;
     color: #fff;
-    background: #0056b3;
+    background: transparent;
     ;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid #005199;
+    border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-family: syne;

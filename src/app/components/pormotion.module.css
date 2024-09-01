@@ -21,7 +21,9 @@
 
 .question {
   font-size: 1.5rem;
-  color: #0056b3;
+  background: linear-gradient(45deg, #005199, #0289ff); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-family: orbitron;
 }

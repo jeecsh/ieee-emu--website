@@ -92,6 +92,7 @@
   border-radius: 30px;
   cursor: pointer;
   font-size: 15px;
+
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -106,6 +107,8 @@
   margin-left: 30px; /* Max width for the button */
   animation: float 3s ease-in-out infinite; /* Floating effect */
   font-family: syne;
+  text-decoration: none;
+    text-align: center;
 }
 
 .ctaButton::before {
@@ -176,6 +179,7 @@
     width: auto; /* Auto width within its container */
     max-width: none; /* Remove max width constraint */
     animation: none; /* Disable animation for small screens if needed */
+    text-decoration: none;
   }
 
   .textAndButtonContainer {
@@ -203,13 +207,18 @@
     margin-top: 20px;
     margin-bottom: 30px;
   }
-
+  .ctaButton a {
+    text-decoration: none;
+  }
+  
   .ctaButton {
     font-size: 12px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 20px;/* Further adjustment for very small screens */
+    text-decoration: none !important;
+    text-align: center;
+  }
+  .ctaButton p{
+    text-decoration: none !important;
   }
 
   .textAndButtonContainer {

@@ -2,7 +2,6 @@
 import HeroSection from "./components/hero";
 import ResponsiveAppBar from "./components/navbar";
 import AboutUs from "./components/about";
-import AnimatedNumbers from "./components/aninumb";
 import ContactUs from "./components/contact";
 import Footer from "./components/footer.js"
 import Promotion from "./components/pormotion";
@@ -16,11 +15,9 @@ import JoinSection from "./components/member";
 export default function Home() {
   return (
  <div>
-
-<ResponsiveAppBar/>
-<AnimatedNumbers />
-<HeroSection/>
 <HeroSec/>
+<ResponsiveAppBar/>
+<HeroSection/>
 <Quote/>
 <AboutUs />
 

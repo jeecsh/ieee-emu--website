@@ -160,3 +160,6 @@ body {
 html {
   scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
+body, html {
+  overflow-x: hidden;
+}

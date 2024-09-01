@@ -186,7 +186,9 @@ top: -100px;
       font-size: 0.9em;
   }
   .floatingLogo{
- margin-bottom: 70px;
+ margin-bottom: 70px; 
+ height: 70%;
+ width: 70%;
   }
 }
 /* Trigger Button styling */
@@ -196,8 +198,8 @@ top: -100px;
   font-size: 1.1em;
   font-weight: 600;
   color: #ffffff;
-  background-color: #0056b3;
-  border: 2px solid #0056b3;
+  background-color: #0057b300;
+  border: 2px solid #003874;
   border-radius: 30px;
   cursor: pointer;
   font-family: syne;

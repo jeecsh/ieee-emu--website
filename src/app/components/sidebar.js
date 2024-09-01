@@ -20,7 +20,7 @@ export default function Sidebar({ isOpen, onClose }) {
           <Nav.Link href="#news" className={styles.customNavLink} onClick={handleNavClick}>News</Nav.Link>
           <Nav.Link href="/event" className={styles.customNavLink} onClick={handleNavClick}>Events</Nav.Link>
           <Nav.Link href="/team" className={styles.customNavLink} onClick={handleNavClick}>Our Team</Nav.Link>
-          <Nav.Link href="#contact" className={styles.customNavLink} onClick={handleNavClick}>Contact Us</Nav.Link>
+          <Nav.Link href="/contact" className={styles.customNavLink} onClick={handleNavClick}>Contact Us</Nav.Link>
         </Nav>
       </div>
     </>

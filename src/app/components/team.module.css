@@ -3,6 +3,8 @@
     padding: 50px;
     color: #fff;
     font-family: syne;
+    width: 100%;            /* Ensure the container takes up the full width */
+    box-sizing: border-box; 
   }
   .memberTitle{
     color: #005199;
@@ -182,7 +184,7 @@
     }
   
     .executiveBoard h2, .committees h2 {
-      font-size: 27px;
+      font-size: 24px;
     }
   
     .committeeNav {
@@ -199,6 +201,9 @@
     .navLine {
       width: 100%; 
       opacity: 0;/* Full width on the smallest screens */
+    }
+    .ourTeam{
+        width: 100%;
     }
   }
   

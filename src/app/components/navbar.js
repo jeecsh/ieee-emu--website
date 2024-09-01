@@ -66,7 +66,7 @@
                 <Nav.Link href="#news" className={styles.customNavLink}>News</Nav.Link>
                 <Nav.Link href="/event" className={styles.customNavLink}>Events</Nav.Link>
                 <Nav.Link href="/team" className={styles.customNavLink}>Our Team</Nav.Link>
-                <Nav.Link href="#contact" className={styles.customNavLink}>Contact Us</Nav.Link>
+                <Nav.Link href="/contact" className={styles.customNavLink}>Contact Us</Nav.Link>
               </Nav>
             </Navbar.Collapse>
             <Sidebar isOpen={isNavOpen} onClose={toggleNav} />

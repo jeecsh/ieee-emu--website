@@ -226,10 +226,12 @@
 @media (max-width: 768px) {
     .heading {
         font-size: 2rem;
+        text-align: left; /* Align heading to the right */
     }
 
     .description {
         font-size: 1rem;
+        text-align: right; /* Align description to the right */
     }
 
     .formHeading {
@@ -250,15 +252,12 @@
 @media (max-width: 480px) {
     .heading {
         font-size: 1.8rem;
+        text-align: left; /* Align heading to the right */
     }
 
     .description {
         font-size: 0.9rem;
-        text-align: center;
-    }
-
-    .socialMediaSection {
-        justify-content: center;
+        text-align: left; /* Align description to the right */
     }
 
     .formHeading {
@@ -277,5 +276,6 @@
 
     .message {
         font-size: 1rem;
+        text-align: left; /* Align message to the right */
     }
 }

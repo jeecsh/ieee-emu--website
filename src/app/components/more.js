@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { IconButton } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'; // Import Downward Arrow Icon
 import styles from './more.module.css';
 
 export default function EventsSection() {
@@ -61,6 +62,14 @@ export default function EventsSection() {
 
     const handleSeeMoreClick = () => {
         setSectionsVisible(true);
+        
+        setTimeout(() => {
+            if (secondSectionRef.current) {
+                const sectionTop = secondSectionRef.current.getBoundingClientRect().top + window.scrollY;
+                const offset = -100; // Adjust this value to your needs
+                window.scrollTo({ top: sectionTop + offset, behavior: 'smooth' });
+            }
+        }, 0); // Adjust delay if necessary
     };
 
     const handleCloseClick = () => {
@@ -82,6 +91,7 @@ export default function EventsSection() {
     const handleJoinIEEEClick = () => {
         window.open('https://www.ieee.org/membership/join/index.html?WT.mc_id=hc_join', '_blank');
     };
+    
     const handleSeeEventsClick = () => {
         window.location.href = '/event';  // Directly navigates to the /events page
     };
@@ -100,6 +110,7 @@ export default function EventsSection() {
                     <button className={styles.ctaButton} onClick={handleSeeEventsClick}>See Our Events</button>
                     <button className={styles.triggerButton} onClick={handleSeeMoreClick}>
                         See More About IEEE
+                        <ArrowDownwardIcon className={styles.downArrow} />
                     </button>
                 </div>
                 <div className={styles.logoContainer}>

@@ -211,6 +211,7 @@ top: -100px;
   padding: 12px 25px;
   font-size: 1.1em;
   font-weight: 600;
+  height: 60px;
   color: #ffffff;
   background-color: #0057b300;
   border: 2px solid #003874;
@@ -230,7 +231,7 @@ top: -100px;
 .fourthSection {
   position: absolute;
   top: -250px;
-  background: linear-gradient(45deg, #8e44ad, #c0392b);
+  background: linear-gradient(45deg, #4446ad, #c0392b);
   opacity: 10%;
   position: relative; /* Ensure it stacks correctly after the third section */
   opacity: 0;
@@ -241,6 +242,17 @@ top: -100px;
 .fourthVisible {
   transform: scale(1); /* Increase scale when visible */
   opacity: 1; /* Fully opaque */
+}
+.downArrow{
+  color: #ffffff; /* Adjust the color */
+  background-color:transparent; /* Adjust the background color */
+  transition: transform 0.3s ease;
+  height: 20px;
+border-radius: 50%;
+  animation: jump 1s infinite;
+  margin-top: 15px;
+  font-weight: bolder;
+  margin-left: 10px;
 }
 
 .h4 {

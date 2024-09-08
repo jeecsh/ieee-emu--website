@@ -1,0 +1,25 @@
+/* Add your page-specific styles here */
+.pageContainer {
+    padding: 20px;
+    background-color: #000000;
+    margin-top: 100px;
+  }
+  
+  .pageTitle {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .newsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .newsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Add more styles as needed */
+  

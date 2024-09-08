@@ -1,0 +1,15 @@
+/* newss.module.css */
+.newsDetailContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .newsImage {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .newsBody {
+    margin-top: 20px;
+  }
+  

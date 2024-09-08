@@ -46,7 +46,7 @@ export default function AboutUs() {
           </p>
           <a href="https://www.ieee.org" target="_blank" rel="noopener noreferrer">
             <button className={styles.ctaButton}>
-              <p>See ieee.org <KeyboardDoubleArrowRightIcon /></p>
+              <p>See ieee.org</p>
             </button>
           </a>
         </div>

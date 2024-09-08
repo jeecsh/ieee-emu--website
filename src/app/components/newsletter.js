@@ -29,7 +29,6 @@ export default function Subscribe() {
                 <h1 className={styles.heading}>Stay Updated!</h1>
                 <p className={styles.description}>
                     Stay ahead in the world of electrical and computer engineering with IEEE EMU SB! Follow our channels and Join our newsletter to receive the latest news and updates directly to your inbox.<br/>
-                    Don't miss out on important announcements and exclusive content.
                 </p>
                 <div className={styles.socialMediaSection}>
                     <IconButton 

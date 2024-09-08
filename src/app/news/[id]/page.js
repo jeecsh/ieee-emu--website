@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation'; // Import from next/navigation
+import ResponsiveAppBar from '../../components/navbar'; // Adjust the path to your Navbar
+import Footer from '../../components/footer'; // Adjust the path to your Footer
+import Loading from '../../components/loading'; // Import your Loading component
 import styles from './newss.module.css';
 
 export default function NewsDetail({ params }) {
@@ -34,7 +37,7 @@ export default function NewsDetail({ params }) {
   }, [id]); // Dependency on id, fetch again if id changes
 
   if (isLoading) {
-    return <p>Loading news...</p>; // Loading state
+    return <Loading />; // Use your Loading component for a styled loading indicator
   }
 
   if (error) {
@@ -46,15 +49,19 @@ export default function NewsDetail({ params }) {
   }
 
   return (
-    <div className={styles.newsDetailContainer}>
-      <button onClick={() => router.back()} className={styles.goBackButton}>Go Back</button> {/* Back button */}
-      
-      <h1 className={styles.newsTitle}>{news.title}</h1>
-      <p className={styles.newsDescription}>{news.description}</p>
-      <img src={news.image} alt={news.title} className={styles.newsImage} />
-      <div className={styles.newsBody}>
-        <p>{news.body}</p> {/* Display the body field */}
+    <>
+      <ResponsiveAppBar /> {/* Include the Navbar */}
+      <div className={styles.newsDetailContainer}>
+        <button onClick={() => router.back()} className={styles.goBackButton}>Go Back</button> {/* Back button */}
+        
+        <h1 className={styles.newsTitle}>{news.title}</h1>
+        <p className={styles.newsDescription}>{news.description}</p>
+        <img src={news.image} alt={news.title} className={styles.newsImage} />
+        <div className={styles.newsBody}>
+          <p>{news.body}</p> {/* Display the body field */}
+        </div>
       </div>
-    </div>
+      <Footer /> {/* Include the Footer */}
+    </>
   );
 }

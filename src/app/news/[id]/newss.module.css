@@ -1,15 +1,162 @@
-/* newss.module.css */
+/* Container for the news details */
 .newsDetailContainer {
-    padding: 20px;
-    background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 80px;
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUp 0.7s forwards;
+}
+
+/* Button with hover effect and subtle scale animation */
+.goBackButton {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid #003874;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-family: syne;}
+
+.goBackButton:hover {
+  background-color: #004095;
+  transform: scale(1.05); /* Hover effect */
+}
+
+/* Title styling with modern look */
+.newsTitle {
+  font-size: 3rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #004077, #0289ff); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-family: orbitron;
+  text-align: center;
+  letter-spacing: 1px;
+  animation: fadeInUp 0.7s ease; /* Text animation */
+}
+
+/* Description styling with opacity animation */
+.newsDescription {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: #cccccc;
+  text-align: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.newsDescription:hover {
+  opacity: 1; /* Hover effect */
+}
+
+/* Image styling with modern hover effect */
+.newsImage {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.newsImage:hover {
+  transform: scale(1.03); /* Zoom-in on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Body content styling with smooth transitions */
+.newsBody {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #dddddd;
+  padding: 25px;
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.newsBody:hover {
+  background-color: #333333;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .newsImage {
-    max-width: 100%;
-    height: auto;
+  to {
+    opacity: 1;
   }
-  
+}
+
+/* Slide-up animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in-up animation for titles */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .newsTitle {
+    font-size: 2.5rem;
+  }
+
+  .newsDescription {
+    font-size: 1.1rem;
+  }
+
   .newsBody {
-    margin-top: 20px;
+    font-size: 1rem;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .newsTitle {
+    font-size: 2rem;
+  }
+
+  .newsDescription {
+    font-size: 1rem;
+  }
+
+  .newsBody {
+    font-size: 0.9rem;
+    padding: 20px;
+  }
+
+  .newsImage {
+    max-height: 300px;
+  }
+}

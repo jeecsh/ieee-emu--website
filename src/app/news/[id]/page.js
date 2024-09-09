@@ -6,6 +6,7 @@ import ResponsiveAppBar from '../../components/navbar'; // Adjust the path to yo
 import Footer from '../../components/footer'; // Adjust the path to your Footer
 import Loading from '../../components/loading'; // Import your Loading component
 import styles from './newss.module.css';
+import HeroSec from '@/app/components/hero2';
 
 export default function NewsDetail({ params }) {
   const router = useRouter(); // Router for navigation
@@ -50,6 +51,7 @@ export default function NewsDetail({ params }) {
 
   return (
     <>
+    <HeroSec/>
       <ResponsiveAppBar /> {/* Include the Navbar */}
       <div className={styles.newsDetailContainer}>
         <button onClick={() => router.back()} className={styles.goBackButton}>Go Back</button> {/* Back button */}

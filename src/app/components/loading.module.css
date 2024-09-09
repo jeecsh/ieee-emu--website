@@ -1,25 +1,57 @@
-.loadingContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+/* styles/Home.module.css */
+
+/* Container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  margin-top: 100px;
+}
+
+/* Loader Styles */
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 150px;
+}
+
+.ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  animation: move 2s infinite ease-in-out;
+  position: relative;
+}
+
+.ball:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ball:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.ball:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0px);
+    background-color: #005199; /* Start color (dark blue) */
   }
-  .p{
-    color: #0056b3;
+  50% {
+    transform: translateY(-40px);
+    background-color: #0062b8; /* Midpoint color (mid blue) */
   }
-  .spinner {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #0056b3;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-    margin-bottom: 30px;
+  100% {
+    transform: translateY(0px);
+    background-color: #0289ff; /* End color (light blue) */
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
+}
+
+/* Heading */

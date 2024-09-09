@@ -4,11 +4,13 @@ import styles from './event.module.css'; // Custom CSS
 import ResponsiveAppBar from "../components/navbar";
 import Footer from "../components/footer";
 import EventCard from "../components/eventcard"; // Import EventCard
+import Loading from "../components/loading"; // Import your Loading component
 
 export default function NewsPage() {
   const [events, setEvents] = useState([]); // Initialize as an empty array
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
+  const [loading, setLoading] = useState(true); // Initialize loading state
 
   // Fetch events data from the API
   useEffect(() => {
@@ -17,9 +19,11 @@ export default function NewsPage() {
       .then((data) => {
         console.log("Fetched events data:", data); // Check the fetched data
         setEvents(data);
+        setLoading(false); // Set loading to false once data is fetched
       })
       .catch((error) => {
         console.error("Failed to fetch events:", error);
+        setLoading(false); // Set loading to false if there's an error
       });
   }, []);
 
@@ -43,31 +47,36 @@ export default function NewsPage() {
       <div className={styles.container}>
         <h1 className={styles.heading}>Events</h1>
 
-        <div className={styles.eventsContainer}>
-          {/* Upcoming Events Section */}
-          <div className={styles.eventsSection}>
-            <h2 className={styles.subheading}>Upcoming Events</h2>
-            {upcomingEvents.length > 0 ? (
-              upcomingEvents.map(event => (
-                <EventCard key={event._id} event={event} /> // Use EventCard component
-              ))
-            ) : (
-              <p>No upcoming events.</p>
-            )}
-          </div>
+        {/* Show loading spinner while data is being fetched */}
+        {loading ? (
+          <Loading /> // Show loading component
+        ) : (
+          <div className={styles.eventsContainer}>
+            {/* Upcoming Events Section */}
+            <div className={styles.eventsSection}>
+              <h2 className={styles.subheading}>Upcoming Events</h2>
+              {upcomingEvents.length > 0 ? (
+                upcomingEvents.map(event => (
+                  <EventCard key={event._id} event={event} /> // Use EventCard component
+                ))
+              ) : (
+                <p>No upcoming events.</p>
+              )}
+            </div>
 
-          {/* Past Events Section */}
-          <div className={styles.eventsSection}>
-            <h2 className={styles.subheading}>Past Events</h2>
-            {pastEvents.length > 0 ? (
-              pastEvents.map(event => (
-                <EventCard key={event._id} event={event} /> // Use EventCard component
-              ))
-            ) : (
-              <p>No past events available.</p>
-            )}
+            {/* Past Events Section */}
+            <div className={styles.eventsSection}>
+              <h2 className={styles.subheading}>Past Events</h2>
+              {pastEvents.length > 0 ? (
+                pastEvents.map(event => (
+                  <EventCard key={event._id} event={event} /> // Use EventCard component
+                ))
+              ) : (
+                <p>No past events available.</p>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
       <Footer />
     </>

@@ -63,7 +63,7 @@
               <Nav className={styles.jj}>
                 <Nav.Link href="/" className={styles.customNavLink}>Home</Nav.Link>
                 <Nav.Link href="#aboutus" className={styles.customNavLink}>About Us</Nav.Link>
-                <Nav.Link href="#news" className={styles.customNavLink}>News</Nav.Link>
+                <Nav.Link href="/news" className={styles.customNavLink}>News</Nav.Link>
                 <Nav.Link href="/event" className={styles.customNavLink}>Events</Nav.Link>
                 <Nav.Link href="/team" className={styles.customNavLink}>Our Team</Nav.Link>
                 <Nav.Link href="/contact" className={styles.customNavLink}>Contact Us</Nav.Link>

@@ -93,28 +93,7 @@ top: -100px;
   color: #e0e0e0;
 }
 
-/* Button styling */
-.ctaButton {
-  padding: 12px 25px;
-  font-size: 1.1em;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: transparent;
-  border: 2px solid #003874;
-  border-radius: 30px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  font-family: syne;
-  animation: float 5s ease-in-out infinite;
-}
 
-.ctaButton:hover {
-  background-color: #026ada;
-  color: #fff;
-  transform: scale(1.05);
-}
 
 /* Floating logo styling */
 .floatingLogo {
@@ -206,7 +185,33 @@ top: -100px;
     text-align: center;
   }
 }
-/* Trigger Button styling */
+/* Call to Action Button (ctaButton) */
+.ctaButton {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid #003874;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-family: syne;
+  transform: translateX(-100vw); /* Start off-screen to the left */
+  opacity: 0; /* Initially hidden */
+  animation: slideInFromLeft 1s forwards ease-in-out; /* Slide in from left */
+  animation-delay: 0.5s; /* Delay to stagger the buttons */
+}
+
+.ctaButton:hover {
+  background-color: #026ada;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Trigger Button (triggerButton) */
 .triggerButton {
   margin-top: 20px;
   padding: 12px 25px;
@@ -221,13 +226,31 @@ top: -100px;
   font-family: syne;
   transition: background-color 0.3s ease, transform 0.3s ease;
   white-space: nowrap;
-  animation: float 5s ease-in-out infinite;
+  transform: translateX(-100vw); /* Start off-screen to the left */
+  opacity: 0; /* Initially hidden */
+  animation: slideInFromLeft 1s forwards ease-in-out; /* Slide in from left */
+  animation-delay: 1s; /* Delay for a smoother effect */
 }
 
 .triggerButton:hover {
   background-color: #0f9fff;
   transform: scale(1.05);
 }
+
+/* Animation for sliding in from the left */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100vw); /* Off-screen */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Original position */
+    opacity: 1;
+  }
+}
+
+
+
 
 /* Fourth section styles */
 .fourthSection {

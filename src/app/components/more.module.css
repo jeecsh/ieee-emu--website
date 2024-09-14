@@ -107,6 +107,7 @@ top: -100px;
   overflow: hidden;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
   font-family: syne;
+  animation: float 5s ease-in-out infinite;
 }
 
 .ctaButton:hover {
@@ -220,6 +221,7 @@ top: -100px;
   font-family: syne;
   transition: background-color 0.3s ease, transform 0.3s ease;
   white-space: nowrap;
+  animation: float 5s ease-in-out infinite;
 }
 
 .triggerButton:hover {

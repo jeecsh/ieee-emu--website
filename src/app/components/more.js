@@ -103,7 +103,7 @@ export default function EventsSection() {
                 ref={firstSectionRef}
             >
                 <div className={styles.contentContainer}>
-                    <h2 className={styles.hhh}>Our Student Branch Events</h2>
+                    <h2 className={styles.hhh}>Student Branch Events</h2>
                     <p>
                         Our events are open to everyone, but IEEE student members receive priority registration and discounts. These events are tailored to your interests and offer valuable opportunities for involvement and leadership within the IEEE community.
                     </p>

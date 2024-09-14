@@ -56,9 +56,8 @@
 
 /* Glowing animation */
 .shapeYour,
-.future,
-.elevateYour,
-.journey {
+.elevateYour
+{
   font-size: 4rem; /* Default font size */
   background: linear-gradient(45deg, #000000, #1994ff); /* Blue gradient */
   -webkit-background-clip: text;
@@ -67,6 +66,15 @@
   animation: backgroundMove 30s linear infinite;
 }
 
+
+.future , .journey{
+  font-size: 4rem; /* Default font size */
+  background: linear-gradient(45deg, #001527, #1994ff); /* Blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation: backgroundMove 30s linear infinite;
+}
 .with {
   font-size: 3rem; /* Default font size */
   background: linear-gradient(45deg, #000000, #1994ff); /* Blue gradient */

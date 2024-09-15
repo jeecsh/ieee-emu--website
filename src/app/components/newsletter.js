@@ -1,26 +1,52 @@
-// pages/subscribe.js
 "use client";
 import { useState } from 'react';
 import styles from './newsletter.module.css';
 import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
 import XIcon from '@mui/icons-material/X';
 import { IconButton } from '@mui/material';
+import SubscriptionModal from '../components/succsess'; // Import the modal
 
 export default function Subscribe() {
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [message, setMessage] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+    const [loading, setLoading] = useState(false); // State for loading
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const response = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, name, surname }),
-        });
-        const data = await response.json();
-        setMessage(data.message);
+        setLoading(true); // Set loading to true
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, name, surname }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setMessage('Subscription successful! Thank you for subscribing.');
+                setIsModalOpen(true); // Open the modal when subscription is successful
+                resetForm(); // Reset form after success
+            } else if (response.status === 409) {
+                setMessage('This email is already subscribed.');
+            } else {
+                setMessage(data.message || 'Failed to subscribe. Please try again.');
+            }
+        } catch (error) {
+            setMessage('An error occurred. Please try again later.');
+        } finally {
+            setLoading(false); // Set loading to false after request
+        }
+    };
+
+    const resetForm = () => {
+        setEmail('');
+        setName('');
+        setSurname('');
     };
 
     return (
@@ -102,10 +128,21 @@ export default function Subscribe() {
                             className={styles.input}
                         />
                     </label>
-                    <button type="submit" className={styles.button}>Subscribe</button>
+                    <button type="submit" className={styles.button} disabled={loading}>
+                        {loading ? (
+                            <div className={styles.loader}>
+                                <div className={styles.spinner}></div>
+                            </div>
+                        ) : (
+                            <span>Subscribe</span>
+                        )}
+                    </button>
                 </form>
                 {message && <p className={styles.message}>{message}</p>}
             </div>
+
+            {/* Render the Subscription Modal */}
+            <SubscriptionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
     );
 }

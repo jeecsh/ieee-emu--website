@@ -279,3 +279,46 @@
         text-align: left; /* Align message to the right */
     }
 }
+
+/* Loader Styles */
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; /* Adjust width to fit the button */
+    height: 20px; /* Adjust height to fit the button */
+}
+
+.spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1); /* Light background */
+    border-radius: 50%;
+    border-top: 3px solid #0056b3; /* Black color */
+    width: 16px; /* Adjust size */
+    height: 16px; /* Adjust size */
+    animation: spin 1s linear infinite; /* Spinning animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Button Styles */
+
+
+.button:hover {
+    background-color: #0f75e2;
+    transform: translateY(-2px);
+}
+
+.button:disabled {
+    background-color: #000000;
+    cursor: not-allowed;
+}
+
+.button .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

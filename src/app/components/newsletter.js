@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import styles from './newsletter.module.css';
 import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
-import XIcon from '@mui/icons-material/X';
 import { IconButton } from '@mui/material';
+import XIcon from '@mui/icons-material/Close'; // Changed to the Material UI Close icon
 import SubscriptionModal from '../components/succsess'; // Import the modal
 
 export default function Subscribe() {
@@ -13,10 +13,24 @@ export default function Subscribe() {
     const [message, setMessage] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
     const [loading, setLoading] = useState(false); // State for loading
+    const [emailError, setEmailError] = useState(''); // State for email error
+
+    // Simple email validation function
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setEmailError(''); // Reset email error message
         setLoading(true); // Set loading to true
+
+        if (!validateEmail(email)) {
+            setEmailError('Invalid email format');
+            setLoading(false); // Stop loading
+            return;
+        }
 
         try {
             const response = await fetch('/api/subscribe', {
@@ -73,7 +87,7 @@ export default function Subscribe() {
                         aria-label="Twitter"
                         className={styles.icon}
                     >
-                        <XIcon/>
+                        <XIcon />
                     </IconButton>
                     <IconButton 
                         component="a" 
@@ -107,6 +121,7 @@ export default function Subscribe() {
                             required
                             className={styles.input}
                         />
+                        {emailError && <p className={styles.error}>{emailError}</p>} {/* Display email error */}
                     </label>
                     <label className={styles.label}>
                         Name:

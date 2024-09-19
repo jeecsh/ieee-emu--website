@@ -1,8 +1,7 @@
 .promotion {
   padding: 20px;
   background-color: transparent;
-  min-height: 100vh; /* Ensure full height but allow expansion */
-  overflow-y: auto; /* Allow scrolling if content overflows */
+height: 100vh;
 }
 
 .counterRow {
@@ -157,7 +156,7 @@
 @media (min-width: 480px) and (max-width: 767px) {
   .promotion{
     overflow: hidden;
-    height: 500vh;
+    height: auto;
 
   }
   .question {
@@ -195,6 +194,9 @@
 
 /* Extra small screens (Very small mobile) */
 @media (max-width: 479px) {
+  .promotion{
+    height: auto;
+  }
   .question {
     font-size: 1rem;
   }

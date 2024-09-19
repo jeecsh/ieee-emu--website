@@ -34,7 +34,7 @@ export default function NewsSection() {
 
     const handleLatestNewsClick = () => {
         // Logic to open the news section or navigate to the latest news page
-        window.location.href = '/https://ieeexplore.ieee.org/xpl/topAccessedArticles.jsp?punumber=6287639'; // Update this to your actual news page URL
+        window.location.href = 'https://ieeexplore.ieee.org/xpl/topAccessedArticles.jsp?punumber=6287639'; // Update this to your actual news page URL
     };
 
     return (

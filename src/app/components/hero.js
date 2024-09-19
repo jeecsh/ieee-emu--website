@@ -52,7 +52,7 @@ export default function Hero() {
         <div className={styles.text}>
           <h1>Welcome to IEEE EMU Student Branch</h1>
           <p>Empowering Innovation, Networking, and Leadership in Engineering and Technology</p>
-          <a href="https://forms.gle/example" className={styles.ctabutton}>Join Us Now</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFVQwn3JWYx5VIon5b15I-2KyD9tzHKdjipYLOJy4ekSrm5A/viewform" className={styles.ctabutton}>Join Us Now</a>
           <a href="/learnMore" className={styles.ctaButtonSecondary}>Learn More</a>
         </div>
       </div>

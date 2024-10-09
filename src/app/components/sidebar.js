@@ -16,7 +16,7 @@ export default function Sidebar({ isOpen, onClose }) {
         <CloseIcon className={styles.closeBtn} onClick={onClose} aria-label="Close menu" />
         <Nav className={styles.kk}>
           <Nav.Link href="/" className={styles.customNavLink} onClick={handleNavClick}>Home</Nav.Link>
-          <Nav.Link href="/https://ieee-emu-website.vercel.app/#newslet" className={styles.customNavLink} onClick={handleNavClick}>NewsLetter</Nav.Link>
+          <Nav.Link href="https://ieee-emu-website.vercel.app/#newslet" className={styles.customNavLink} onClick={handleNavClick}>NewsLetter</Nav.Link>
           <Nav.Link href="https://ieee-emu-website.vercel.app/#aboutus" className={styles.customNavLink} onClick={handleNavClick}>About Us</Nav.Link>
           <Nav.Link href="/news" className={styles.customNavLink} onClick={handleNavClick}>News</Nav.Link>
           <Nav.Link href="/event" className={styles.customNavLink} onClick={handleNavClick}>Events</Nav.Link>

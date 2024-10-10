@@ -76,8 +76,7 @@ export default function Subscribe() {
     return (
         <>
             {/* Add a button or other trigger to scroll to the section */}
-            <button onClick={scrollToSection}>Go to Newsletter Section</button>
-            
+           
             <section id="newslet" ref={sectionRef}>
                 <div className={styles.container}>
                     <div className={styles.leftSection}>
